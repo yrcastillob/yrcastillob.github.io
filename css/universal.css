@@ -35,6 +35,7 @@ html {
     font-size: 62.5%;
     color: var(--black); 
     background-color: var(--gray);
+    height: 100vh;
 }
 
 html, body {
@@ -52,6 +53,26 @@ a {
 
 p {
     font-size: var(--small);
+}
+
+strong{
+    color: var(--blueTwo);
+    transition: 0.4s;
+}
+
+strong:nth-of-type(3n+1):hover{
+    color: var(--greenDark);
+    transition: 0.4s;
+}
+
+strong:nth-of-type(3n+2):hover{
+    color: var(--orange);
+    transition: 0.4s;
+}
+
+strong:nth-of-type(3n+3):hover{
+    color: var(--yellowTwo);
+    transition: 0.4s;
 }
 
 /********************* HEADER  *********************/
@@ -107,40 +128,46 @@ header{
     padding: 3px;
     border-width: 1px;
     gap: 20px;
-   
+    transition: 0.4s;
 }
 
 .nav-bar ul li:nth-of-type(3n+1) a:hover{
     background-color: var(--yellow);
     color: var(--black);
+    transition: 0.4s;
 }
 
 .nav-bar ul li:nth-of-type(3n+2) a:hover{
     background-color: var(--blue);
     color: var(--black);
+    transition: 0.4s;
 }
 
 .nav-bar ul li:nth-of-type(3n+3) a:hover{
     background-color: var(--green);
     color: var(--black);
+    transition: 0.4s;
 }
 
 .nav-bar ul li:nth-of-type(3n+1) a:active {
     border-color: var(--yellowTwo);
     color: var(--black);
     padding: 4px;
+    transition: 0.4s;
 }
 
 .nav-bar ul li:nth-of-type(3n+2) a:active{
     border-color: var(--blueTwo);
     color: var(--black);
     padding: 4px;
+    transition: 0.4s;
 }
 
 .nav-bar ul li:nth-of-type(3n+3) a:active{
     border-color: var(--greenTwo);
     color: var(--black);
     padding: 4px;
+    transition: 0.4s;
 }
 
 .division-bar{

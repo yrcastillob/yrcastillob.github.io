@@ -85,6 +85,7 @@ main div p {
     width: 20rem;
     height: auto;
     margin-right: 2rem;
+    filter: drop-shadow(0rem 0rem 0.5rem var(--black));
 }
 
 .mini-section:hover{

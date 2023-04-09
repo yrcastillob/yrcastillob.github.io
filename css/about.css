@@ -57,22 +57,6 @@ li{
     margin-top: 1rem;
 }
 
-strong{
-    color: var(--blueTwo);
-}
-
-strong:nth-of-type(3n+1):hover{
-    color: var(--greenDark);
-}
-
-strong:nth-of-type(3n+2):hover{
-    color: var(--orange);
-}
-
-strong:nth-of-type(3n+3):hover{
-    color: var(--yellowTwo);
-}
-
 a{
     font-size: var(--medium-two);
     line-height: 3rem;
@@ -112,11 +96,13 @@ a{
     padding-right: 4px;
     border-width: 1px;
     gap: 20px;
+    transition: 0.4s;
 }
 
 .mini-nav-bar ul li a:hover{
     background-color: gray;
     color: white;
+    transition: 0.4s;
 }
 
 .mini-nav-bar ul li a:active{
@@ -131,16 +117,13 @@ a{
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    
+    filter: drop-shadow(0rem 0rem 1rem var(--black));
 }
 
 .profile-picture img {
     width: 70%;
 }
 
-.profile-picture img:hover{
-    width: 80%;
-}
 /********************* PROFILE PARRAGRAPH  *********************/
 .profile-parragraph{
     display: flex;
@@ -175,6 +158,7 @@ a{
 .education-info img{
     width: 140px;
     margin-right: 4rem;
+    filter: drop-shadow(0rem 0rem 0.5rem var(--black));
 }
 
 .education-info img:hover{
@@ -190,10 +174,12 @@ a{
 
 .education-info ul li:first-child:hover{
     color: var(--greenDark);
+    transition: 0.4s;
 }
 
 .education-info ul li a:hover{
     color: var(--greenDark);
+    transition: 0.4s;
 }
 
 /********************* WORK EXPERIENCE  *********************/
@@ -213,7 +199,8 @@ a{
 }
 
 .work-info:hover{
-    background: var(--gray);
+    background: linear-gradient(45deg,transparent 14%, #9cfcc775 15%, #9cfcc775 20%, transparent 21%, transparent 79%, #9cfcc775  80%, #9cfcc775 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #9cfcc775 15%, #9cfcc775 20%, transparent 21%, transparent 79%, #9cfcc775  80%, #9cfcc775 85%, transparent 86%), radial-gradient(transparent 14%, #9cfcc775 15%, #9cfcc775 25%, transparent 26%);
+    background-size: 2rem 2rem;
 }
 
 .work-info ul li:first-child {
@@ -267,7 +254,8 @@ a{
 }
 
 .habilities-info:hover, .value-info:hover{
-    background: var(--gray);
+    background: linear-gradient(45deg,transparent 14%, #c2edff91 15%, #c2edff91 20%, transparent 21%, transparent 79%, #c2edff91  80%, #c2edff91 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #c2edff91 15%, #c2edff91 20%, transparent 21%, transparent 79%, #c2edff91  80%, #c2edff91 85%, transparent 86%), radial-gradient(transparent 14%, #c2edff91 15%, #c2edff91 25%, transparent 26%);
+        background-size: 2em 2em;
 }
 
 .habilities-info div:nth-of-type(1), .value-info div:nth-of-type(1){
@@ -329,6 +317,7 @@ a{
 
 .language-info img{
     width: 140px;
+    filter: drop-shadow(0rem 0rem 0.5rem var(--black));
 }
 
 .language-info img:hover{
@@ -349,11 +338,13 @@ a{
     border-radius: 3rem;
     border-style: solid;
     border-width: 1px;
+    transition: 0.4s;
 }
 
 .return a:hover{
     background-color: gray;
     color: white;
+    transition: 0.4s;
 }
 
 .return a:active{
