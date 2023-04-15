@@ -204,6 +204,10 @@ footer .card p a{
     color: white;
 }
 
+.footer-text{
+    font-size: var(--small);
+}
+
 footer .card p a:hover{
     color: var(--green);
     font-weight: 500;

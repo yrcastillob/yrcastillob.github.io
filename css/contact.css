@@ -1,0 +1,196 @@
+:root{
+    /*Font family*/
+    --title: 'Montserrat', sans-serif;
+    --parragraph: 'Lato', sans-serif;
+    /*Font size*/
+    --big: 2.0rem;
+    --big-two: 2.2rem;
+    --medium: 1.8rem;
+    --medium-two: 1.6rem;
+    --small: 1.4rem;
+    --small-two: 1.2rem;
+    /*colors*/
+    --yellow: #ffff00;
+    --yellowTwo: #fce307;;
+    --blue: #2196f3;
+    --blueTwo: #0059ff;
+    --green: #74f400;
+    --greenTwo: #50d603;
+    --orange: #ff8000;
+    --orangeTwo:#c07f05;
+    --greenDark: #009846;
+    --gray: aliceblue;
+    --black: #1A1A1B;
+}
+
+
+
+/********************* INTRODUCTION PARRAGRAPH *********************/
+
+a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: var(--medium);
+}
+
+/********************* SOCIAL MEDIA SECTION *********************/
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-media-box, .contact-form{
+    width: 47%;
+}
+
+.social-media-box {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: var(--big-two);
+    font-family: var(--title);
+    margin: 1rem;
+    color: var(--greenTwo);
+}
+
+
+h1:hover {
+    color: var(--orange);
+    transition: 0.4s;
+}
+
+.introduction-parragraph {
+    font-size: var(--medium-two);
+    margin: 1rem;
+    line-height: 3rem;
+    text-align: center;
+}
+
+/*SOCIAL MEDIA LINKS*/
+.social-media-box div {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.social-media-box-media {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.social-media-box-media img {
+    width: 9rem;
+    border-radius: 50%;
+    background-color: var(--gray);
+    opacity: 1;
+    background-image: radial-gradient( var(--blue) 1px, var(--gray) 1px);
+    background-size: 7px 7px;
+}
+
+.social-media-box-media a {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 1rem;
+}
+
+.social-media-box-media a:hover {
+    transition: 0.4s;
+    transform: scaleY(1.05);
+}
+
+.social-media-box-media a:active {
+    transform: scaleX(1.04);
+    transition: 0.4s;
+    
+}
+
+.social-media-box-media a p {
+    margin-left: 3rem;
+    font-family: var(--title);
+    font-weight: 500;
+    font-size: var(--medium-two);
+    color: var(--black);
+}
+
+/********************* CONTACT FORM *********************/
+.contact-form {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 1rem;
+}
+
+label {
+    font-size: var(--medium-two);
+    line-height: 3rem;
+}
+
+input, textarea {
+    padding: 1rem;
+    border-radius: 1rem;
+    font-family: var(--parragraph);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    width: 15rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: var(--gray);
+    font-weight: 600;
+    background-color: var(--blue);
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--blueTwo);
+} 
+
+button:active {
+    background-color: var(--blue);
+    font-weight: 500;
+    color: var(--gray);
+}
+
+/********************* MEDIA QUERIES  *********************/
+
+@media screen and (max-width: 750px) {
+    main {
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .social-media-box, .contact-form{
+        width: 90%;
+        justify-content: center;
+    }
+
+    .social-media-box div {
+        justify-content: center;
+        padding: 0;
+    }
+}

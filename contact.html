@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./images/index/favicon.ico">
     <link rel="stylesheet" href="./css/universal.css">
-
+    <link rel="stylesheet" href="./css/contact.css">
     <title>Contáctame</title>
 </head>
 <body>
@@ -34,14 +34,55 @@
         <div class="division-bar"></div>
     </header>
     
+    <main>
+        <p class="introduction-parragraph">¡No dudes en ponerte en contacto conmigo! Puedes hacerlo a través de mis <strong>redes sociales</strong> o utilizando el <strong>formulario de contacto</strong> que encuentras a continuación.</p>
 
+        <div class="social-media-box">
+            <h1>Redes Sociales</h1>
+            <div>
+                <div class="social-media-box-media">
+                    <a href="https://twitter.com/yrcastillob">
+                        <img src="./images/contact/twitterLogo.png" alt="twitter">
+                        <p>@yrcastillob</p>
+                    </a>
+                </div>
     
+                <div class="social-media-box-media">
+                    <a href="https://linkedin.com/in/yeissoncastillo/"> 
+                        <img src="./images/contact/linkedinLogo.png" alt="LinkedIn">
+                        <p>Yeisson Castillo</p>
+                    </a>
+                </div>
 
+            </div>
+
+        </div>
+        <div class="contact-form">
+            <h1>Formulario de contacto</h1>
+                <form action="https://formsubmit.co/el/defano" method="POST">
+
+                    
+                    <input type="hidden" name="_next" value="https://yrcastillob.github.io/contact.html">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <label for="Name">Nombre completo</label>
+                    <input type="text" name="Name" placeholder="¿Cómo debería llamarte?" size="30" required>
+
+                    <label for="Email">Correo electrónico</label>
+                    <input type="email" name="Email" placeholder="tucorreo@gracias.com" size="30" required>
+
+                    <label for="Message">Mensaje</label>                  
+                    <textarea name="Message" rows="10" placeholder="Si tienes alguna pregunta, comentario o propuesta, no dudes en escribirme. Estaré encantado de responderte lo antes posible." required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+        </div>
+    </main>
 
     <footer>
         <div class="division-bar"></div>
         <div class="card">
-            <p>Creado por <a class="url fn" href="https://www.linkedin.com/in/yeissoncastillo/">Yeisson Castillo</a></p>
+            <p class="footer-text">Creado por <a class="url fn, footer-text" href="https://www.linkedin.com/in/yeissoncastillo/">Yeisson Castillo</a></p>
         </div>
     </footer>
 </body>
