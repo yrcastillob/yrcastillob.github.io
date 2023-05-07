@@ -1,0 +1,123 @@
+:root{
+    /*Font family*/
+    --title: 'Montserrat', sans-serif;
+    --parragraph: 'Lato', sans-serif;
+    /*Font size*/
+    --big: 2.0rem;
+    --big-two: 2.5rem;
+    --medium: 1.8rem;
+    --medium-two: 1.6rem;
+    --small: 1.4rem;
+    --small-two: 1rem;
+    /*colors*/
+    --yellow: #ffff00;
+    --yellowTwo: #fce307;;
+    --blue: #2196f3;
+    --blueTwo: #0059ff;
+    --green: #74f400;
+    --greenTwo: #50d603;
+    --orange: #ff8000;
+    --orangeTwo:#c07f05;
+    --greenDark: #009846;
+    --gray: aliceblue;
+    --black: #1A1A1B;
+}
+
+/********************* MAIN ARTILE *********************/
+
+.article {
+    display: flex;
+    flex-flow: column wrap;
+    width: 90%;
+    margin: 1% auto;
+}
+
+/********************* COVER IMAGE *********************/
+
+.article_cover-image {
+    height: 15rem;
+    margin-bottom: 2rem;
+    
+}
+
+.article_cover-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.article_cover-image figcaption, .article_cover-image a {
+    font-size: var(--small-two);
+    color: var(--black);
+    text-align: end;
+}
+
+.article_cover-image:hover {
+    height: 18rem;
+    transition: 0.4s;
+}
+
+/********************* ARTICLE DATA *********************/
+
+.article_data ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: end;
+}
+
+.article_data ul li {
+    display:block;
+    list-style: none;
+    padding: 1rem;
+    font-size: var(--small-two);
+    font-weight: 700;
+}
+
+/********************* TITLE *********************/
+
+h1 {
+    font-family: var(--title);
+    font-size: var(--big-two);
+    margin-bottom: 1rem;
+    color: var(--greenTwo);
+    text-align: center;
+}
+
+/********************* PARRAGRAPH *********************/
+
+.article p {
+    line-height: 3rem;
+    font-size: var(--medium-two);
+    margin-bottom: 1rem;
+}
+
+.article p q {
+    font-style: oblique;
+    font-weight: 700;
+}
+
+/********************* BIBLIOGRAPHY *********************/
+
+.article_bibliography h2 {
+    font-family: var(--title);
+    font-size: var(--big-two);
+    margin-bottom: 1rem;
+    color: var(--greenTwo);
+    text-align: center;
+}
+
+.article_bibliography ul li {
+    list-style: none;
+    font-size: var(--small);
+}
+
+.article_bibliography ul li a {
+    font-size: var(--small);
+    text-decoration: none;
+    color: var(--black);
+}
+
+.article_bibliography ul li a:hover, .article_cover-image a:hover {
+    color: var(--blueTwo)
+}

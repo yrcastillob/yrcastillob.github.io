@@ -23,6 +23,8 @@
     --black: #1A1A1B;
 }
 
+body { margin: 0; }
+
 * {
     margin: 0;
     padding: 0;
@@ -217,4 +219,3 @@ footer .card p a:active{
     color: var(--green);
     font-weight: 700;
 }
-
