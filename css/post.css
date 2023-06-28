@@ -37,7 +37,6 @@
 .article_cover-image {
     height: 15rem;
     margin-bottom: 2rem;
-    
 }
 
 .article_cover-image img {
@@ -60,20 +59,19 @@
 
 /********************* ARTICLE IMAGE *********************/
 .article_image {
-    height: 30rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-flow: column;
+    width: 100%;
 }
 
 .article_image img {
-    height: 100%;  
+    width: 45%;
     align-self: center;  
 }
 
-.article_image:hover {
-    height: 50rem;
-    transition: 0.5s;
+.article_image img:hover {
+    width: 55%;
 }
 
 .article_image figcaption, .article_image figcaption a { 
@@ -81,7 +79,6 @@
     font-size: var(--small); 
     color: var(--black);
     margin-top: 1rem;
-    margin-bottom: 2rem;
 }
 
 /********************* ARTICLE DATA *********************/
@@ -129,7 +126,7 @@ h1 {
     list-style: none;
     font-size: var(--medium-two);
     line-height: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;  
 }
 
 .post_list li {
@@ -177,3 +174,14 @@ h1 {
 .article_bibliography ul li a:hover, .article_cover-image a:hover {
     color: var(--blueTwo)
 }
+
+/********************* MEDIA QUERIES *********************/
+@media screen and (max-width: 768px) {
+    .article_image img {
+        width: 80%;
+    }
+    
+    .article_image img:hover {
+        width: 90%;
+    }
+  }
