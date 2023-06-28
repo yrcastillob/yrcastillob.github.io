@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/index/favicon.ico">
+    <meta name="keywords" content="Base de datos, conceptos básicos, datos">
+    <link rel="stylesheet" href="../css/universal.css">
+    <link rel="stylesheet" href="../css/post.css">
+    <title>Conceptos básicos sobre base de datos</title>
+</head>
+<body>
+    <header >
+        <div class="logo">
+            <img src="../images/index/LogoWithMessageWhite.png" alt="Logo">
+        </div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="../index.html">Bienvenido</a></li>
+                <li><a href="../about.html">Sobre mí</a></li>
+                <li><a href="../projects.html">Proyectos</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contáctame</a></li>
+            </ul>
+        </div>
+        <div class="division-bar"></div>
+    </header>
+
+
+    <div class="article">
+        <div class="article_cover-image">
+            <img src="../images/post/conceptos-basicos-bd.jpg" alt="Ilustración generada con AI sobre base de datos.">
+            <figcaption>Imagen creada con IA <a href="https://www.bluewillow.ai/">BlueWillow</a></figcaption>
+        </div>
+        <div class="article_data">
+            <ul>
+                <li>Bogotá, Colombia, 27/06/2023</li>
+                <li>Temática: Base de datos</li>
+            </ul>
+        </div>
+        <h1>Conceptos básicos sobre base de datos</h1>
+        <div class="article_parragraphs">
+            <p>Las bases de datos (BD) han venido evolucionando a través de los años y se perfeccionaron gracias a los esfuerzos humanos para administrar eficientemente los grandes volúmenes de información provenientes del desarrollo tecnológico de los siglos XX y XXI. Este desarrollo incluye el paso por estructuras de datos jerárquicas y en forma de árbol, cintas magnéticas, sistemas de ficheros, discos fijos y otras tecnologías que culminaron en la creación de las bases de datos relacionales y todos los otros tipos de BD existentes. </p>
+            <p>Con esto claro, es posible proseguir con los conceptos básicos de las BD de acuerdo con Elmasri y Navathe (2007). </p>
+            <dl class="post_dictionary"> 
+                <dt><strong>Dato:</strong></dt> <dd>unidad mínima de información con significado implícito que puede ser de distinta naturaleza como texto, número, booleano, fecha, hora entre otros sin procesar.</dd>
+                <dt><strong>Información:</strong></dt> <dd>procesamiento del dato, usualmente con software, para darle sentido.</dd>
+                <dt><strong>Base de datos:</strong></dt> <dd>conjunto de datos relacionados e integrados lógicamente que tienen un propósito específico.</dd>
+                <dt><strong>Metadato:</strong></dt> <dd>datos sobre la estructura de los datos de la BD. </dd>
+                <dt><strong>Sistema de administración de base de datos (DBMS):</strong></dt> <dd>conjunto de software para crear, mantener, actualizar, almacenar, compartir, proteger y extraer información de las bases de datos. Pueden ser corporativos para el procesamiento de gran cantidad de información o ofimáticos para BD que requieren menos recursos.</dd>
+                <dt><strong>Sistema de base de datos:</strong></dt> <dd>unión de DBMS y BD con un propósito.</dd>
+            </dl>
+            <div class="article_image">
+                <img src="../images/post/conceptos-basicos-bd-mapa-conceptual.png" alt="Mapa conceptual base de datos." title="Mapa conceptual base de datos">
+                <figcaption>Elaboración propia a partir de <a href="https://www-ebooks7-24-com.bdbiblioteca.universidadean.edu.co/?il=3950">Elmasri y Navathe (2007)</a></figcaption>
+            </div>
+            <p>Así, a grandes rasgos el ecosistema de un sistema de base de datos puede comprenderse como la unión de distintas capas que permiten el funcionamiento y administración de las BD con: 1. programas de alto nivel para que los usuarios puedan realizar consultas y administrar las BD fácilmente; 2. Software especializado para ejecutar consultas y acceder a las bases de datos; 3. BD compuestas por los datos puros y sus metadatos. </p>
+            <div class="article_image">
+                <img src="../images/post/conceptos-basicos-bd-sistema-bd.png" alt="Diagrama de como funciona un sistema de datos" title="Diagrama de como funciona un sistema de datos">
+                <figcaption>Adaptación propia a partir de <a href="https://www-ebooks7-24-com.bdbiblioteca.universidadean.edu.co/?il=1280">Rob y Morris (2011)</a></figcaption>
+            </div>
+            <p>Finalmente, de acuerdo con Coronel, Rob y Morris (2011) las BD pueden ser clasificadas con base en múltiples características como: número de usuarios, ubicación, tipo de uso y tipo de datos almacenados. A continuación, se hace una pequeña descripción de esta categorización: </p>
+            <ul class="post_list">
+            <li><strong>Número de usuarios:</strong> puede haber de un solo usuario que soporta un único usuario operando transacciones. Base de datos de usuarios múltiples en la que varios usuarios pueden efectuar operaciones al tiempo.</li>
+            <li><strong>Ubicación:</strong> centralizada cuando se almacenan los datos de un solo lugar y base de datos distribuida cuando trata con datos de distintos lugares.</li>
+            <li><strong>Tipos de uso:</strong> si soporta operaciones del día a día empresarial se conoce como base de datos operacional, de transacciones o de producción. En contraste, si solo almacena datos para apoyar procesos decisivos se conoce como almacén de datos.</li>
+            <li><strong>Tipos de datos:</strong> si emplea datos que no se han refinado, ejemplo: imágenes, es una BD de datos no estructurados. Si los datos han sido transformados en una estructura bien definida es una BD con datos estructurados. Finalmente, si los datos se han procesado moderadamente se denomina BD de datos semiestructurados.</li>
+            </ul>
+        </div>
+       
+        <div class="article_bibliography">
+            <h2>Bibliografía</h2>
+            <ul>
+                <li> Coronel, C., Rob, P., Morris, S.(2011). <cite>Bases de datos: diseño, implementación y Administración</cite>. Cengage Learning. Tomado de: <a href= "https://www-ebooks7-24-com.bdbiblioteca.universidadean.edu.co/?il=1280">https://www-ebooks7-24-com.bdbiblioteca.universidadean.edu.co/?il=1280</a></li>
+                <li> Elmasri, R. Navathe, S. B.(2007). <cite>Fundamentos de sistemas de bases de datos</cite>. Pearson Educación. Tomado de: <a href="https://www-ebooks7-24-com.bdbiblioteca.universidadean.edu.co/?il=3950">https://www-ebooks7-24-com.bdbiblioteca.universidadean.edu.co/?il=3950</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="division-bar"></div>
+        <div class="card">
+            <p class="footer-text">Creado por <a class="url fn, footer-text" href="https://www.linkedin.com/in/yeissoncastillo/">Yeisson Castillo</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -58,6 +58,32 @@
     transition: 0.4s;
 }
 
+/********************* ARTICLE IMAGE *********************/
+.article_image {
+    height: 30rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-flow: column;
+}
+
+.article_image img {
+    height: 100%;  
+    align-self: center;  
+}
+
+.article_image:hover {
+    height: 50rem;
+    transition: 0.5s;
+}
+
+.article_image figcaption, .article_image figcaption a { 
+    align-self: center; 
+    font-size: var(--small); 
+    color: var(--black);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
 /********************* ARTICLE DATA *********************/
 
 .article_data ul{
@@ -70,7 +96,7 @@
     display:block;
     list-style: none;
     padding: 1rem;
-    font-size: var(--small-two);
+    font-size: var(--small);
     font-weight: 700;
 }
 
@@ -97,6 +123,35 @@ h1 {
     font-weight: 700;
 }
 
+/********************* LIST AND DICTIONARY *********************/
+
+.post_list, .post_dictionary {
+    list-style: none;
+    font-size: var(--medium-two);
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.post_list li {
+    margin-bottom: 1rem;
+}
+
+.post_dictionary dt {
+    display: inline;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.post_dictionary dd {
+    display: inline;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.post_dictionary dd::after{
+    content: "\a";
+    white-space: pre;
+}
 /********************* BIBLIOGRAPHY *********************/
 
 .article_bibliography h2 {
@@ -110,6 +165,7 @@ h1 {
 .article_bibliography ul li {
     list-style: none;
     font-size: var(--small);
+    margin-bottom: 1rem;
 }
 
 .article_bibliography ul li a {
