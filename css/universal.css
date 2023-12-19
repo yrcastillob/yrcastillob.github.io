@@ -87,15 +87,20 @@ header{
     margin-right: auto;
     width: 100%;
     background-image: url("../images/index/textura.svg");
-    background-color: var(--gray);
-    background-size: 18rem;
+    background-color: var(--black);
+    background-size: 50rem;
+    justify-content: center;
+    align-items: center;
 }
+
 /*Logo*/
 .logo{
     display: flex;
     flex-flow: column wrap;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo img {
@@ -103,15 +108,17 @@ header{
 }
 
 /*Navigation Bar*/
+
 .nav-bar {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
     margin-left: auto;
     margin-right: auto;
-    width: 97%;
-    border-radius: 2px;
-    padding: 4px;
-    
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2px;
 }
 
 .nav-bar ul {
@@ -128,28 +135,38 @@ header{
 .nav-bar ul li a{
     font-family: var(--title);
     font-size: var(--medium);
-    color: black;
-    border-style: solid;
+    color: white;
     padding: 3px;
     border-width: 1px;
     gap: 20px;
     transition: 0.4s;
+    padding: 8px;
+    border-radius: 18px;
+    font-weight: 500;
+    position: relative;
 }
 
+
 .nav-bar ul li:nth-of-type(3n+1) a:hover{
-    background-color: var(--yellow);
+    background: url("../images/index/brillo.svg"), linear-gradient(to bottom right, rgba(223, 182, 68, 0.42), var(--yellowTwo));   
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--black);
     transition: 0.4s;
 }
 
 .nav-bar ul li:nth-of-type(3n+2) a:hover{
-    background-color: var(--blue);
+    background: url("../images/index/brillo.svg"), linear-gradient(to bottom right, #4494df6c, var(--blue));
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--black);
     transition: 0.4s;
 }
 
 .nav-bar ul li:nth-of-type(3n+3) a:hover{
-    background-color: var(--green);
+    background: url("../images/index/brillo.svg"), linear-gradient(to bottom right, #5edf446c, var(--greenTwo));
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--black);
     transition: 0.4s;
 }
@@ -191,10 +208,10 @@ footer {
     width: 100%;
     height: 5rem;
     background-image: url("../images/index/textura.svg");
-    background-color: var(--gray);
+    background-color: var(--black);
     background-size: 18rem;
     margin-bottom: 4px;
-    color: black;
+    color: white;
 }
 
 footer .card{
@@ -204,11 +221,11 @@ footer .card{
 }
 
 footer .card p {
-    color: black;
+    color: white;
 }
 
 footer .card p a{
-    color: black;
+    color: white;
 }
 
 .footer-text{
