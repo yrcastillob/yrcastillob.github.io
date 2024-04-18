@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./images/index/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./images/index/favicon.svg">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/universal.css">
     <title>Yeisson Castillo</title>
@@ -20,7 +20,7 @@
     <header>
         <div class="menucontainer">
             <div class="logo">
-                <img src="./images/index/logosimplewhite.svg" alt="Logo" id="smalllogo">
+                <img src="./images/index/logosimple.svg" alt="Logo" id="smalllogo">
             </div>
             <div class="menuiconcontainer" id="menuiconcontainer">
                 <img src="/images/index/menu.svg" alt="menuicon" id="menuicon" onclick="show('navbar')">
@@ -29,10 +29,9 @@
                 <div class="closeiconcontainer" id="closeiconcontainer">
                     <img src="/images/index/close.svg" id="closeicon" onclick="hide('navbar')">
                 </div>
-                <img src="./images/index/logosimplewhite.svg" alt="Logo" id="smalllogo2">
+                <img src="./images/index/logosimple.svg" alt="Logo" id="smalllogo2">
                 <ul>
-                    <li><a href="index.html">Bienvenido</a></li>
-                    <li><a href="about.html">Sobre mí</a></li>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="projects.html">Proyectos</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contáctame</a></li>
@@ -42,6 +41,182 @@
         </div>
         <div class="division-bar"></div>
     </header>
+    <section class="aboutSection">
+        <div class="aboutSection_options">
+            <div class="aboutSection_options_item">
+                <img src="/images/index/profile.svg" alt="Perfil">
+                <p>Perfil</p>
+            </div>
+            <div class="aboutSection_options_item">
+                <img src="/images/index/education.svg" alt="Educación">
+                <p>Educación</p>
+            </div>
+            <div class="aboutSection_options_item">
+                <img src="/images/index/habilities.svg" alt="Habilidades">
+                <p>Habilidades e <br>idiomas</p>
+            </div>
+            <div class="aboutSection_options_item">
+                <img src="/images/index/job.svg" alt="Experiencia Laboral">
+                <p>Experiencia <br> laboral</p>
+            </div>
+        </div>
+        <section class="aboutSection_content">
+            <div class="aboutSection_contentItem">
+                <div class="aboutSection_contentItem-profilepicture">
+                    <img src="/images/index/profile.jpg" alt="Foto de perfil">
+                </div>
+                <div class="aboutSection_contentItem-profiletext">
+                    <p>¡Saludos!, soy Yeisson Castillo, un <strong>desarrollador junior full stack</strong> <strong>Interesado en el área de front end y el back end</strong> con el propósito de convertirme en desarrollador full stack.
+                    </p>
+                    <p>Me <strong>encanta el desarrollo web </strong>y por ello quiero alinear mi carrera profesional con este campo. <strong>Disfruto de aprender e investigar</strong>; soy un estudiante permanente y siempre realizo todas mis actividades con la mayor diligencia, responsabilidad y calidad.</p>
+                </div>
+            </div>
+            <div class="aboutSection_contentItem">
+                <div class="education-info">
+                    <div>
+                        <img src="./images/about/ingenieria.jpg" alt="Imagen ingeniería de sistemas">
+                    </div>
+                    <ul>
+                        <li class="education-info_title">Ingeniería de Sistemas</li>
+                        <li class="education-info_dates">Graduación 2024</li>
+                        <li class="education-info_institution"><a href="https://universidadean.edu.co/programas/carreras-profesionales/carrera-de-ingenieria-de-sistemas">Universidad Ean</a></li>
+                        <li class="education-info_place">Bogotá, Colombia</li>
+                    </ul>
+                </div>
+                <div class="education-info">
+                    <div>
+                        <img src="./images/about/bootcamp.jpg" alt="Imagen bootcamp">
+                    </div>
+                    <ul>
+                        <li class="education-info_title">Bootcamp Desarrollo Web Full Stack 300 Horas</li>
+                        <li class="education-info_dates">Agosto 2023 - Diciembre 2023</li>
+                        <li class="education-info_institution"><a href="https://bit.institute/E?A=Curso-Full-Stack-Frontend-Backend">Bogotá Institute of Technology</a></li>
+                        <li class="education-info_place">Bogotá, Colombia</li>
+                    </ul>
+                </div>
+                <div class="education-info">
+                    <div>
+                        <img src="./images/about/lenguas.jpg" alt="Imagen lenguas modernas">
+                    </div>
+                    <ul>
+                        <li class="education-info_title">Lenguas Modernas</li>
+                        <li class="education-info_dates">Graduado abril 2020</li>
+                        <li class="education-info_institution"><a href="https://universidadean.edu.co/programas/carreras-profesionales/carrera-de-lenguas-modernas">Universidad Ean</a></li>
+                        <li class="education-info_place">Bogotá, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="aboutSection_contentItem">
+                <table>
+                    <tr>
+                        <th colspan="3">Habilidades</th>
+                    </tr>
+                    <tr>
+                        <td>HTML</td>
+                        <td>CSS</td>
+                        <td>JavaScript intermedio</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Python intermedio</td>
+                        <td>Node.JS intermedio</td>
+                        <td>MongoDB Intermedio</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Express.JS</td>
+                        <td>Angular</td>
+                        <td>Resolución problemas</td>
+                    </tr>
+                    <tr>
+                        <td>Resolución problemas</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th colspan="3">Idiomas</th>
+                    </tr>
+                    <tr>
+                        <th>Idioma</th>
+                        <th>Nivel</th>
+                        <th>Certificación</th>
+                    </tr>
+                    <tr>
+                        <td>Inglés</td>
+                        <td>C1</td>
+                        <td>Certificado IELTS Academics 2023</td>
+                    </tr>
+                    <tr>
+                        <td>Francés</td>
+                        <td>B2</td>
+                        <td>Certificado DELF</td>
+                    </tr>
+                    <tr>
+                        <td>Portugués</td>
+                        <td>B2</td>
+                        <td>Certificado Celpe-Bras</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="aboutSection_contentItem">
+                <div class="work-info">
+                    <ul>
+                        <li>Enel Colombia</li>
+                        <li>Pasante</li>
+                        <li>Agosto 2023 - Enero 2024</li>
+                        <li><p>Proyecto diseño plataforma para visualización enlaces GPS realizada con Python.</p>
+                            <p>Automatización proceso de distribución estaciones de trabajo.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-info">
+                    <ul>
+                        <li>EXL Service Colombia</li>
+                        <li>Analista de calidad</li>
+                        <li>Noviembre 2020 - Mayo 2023</li>
+                        <li><p>Monitoreo de llamadas para garantizar realización de debido proceso.</p>
+                            <p>Sesiones de retroalimentación y entrenamiento para prevención, corrección y disminución de errores por parte de los agentes.</p>
+                            <p>Elaboración de informes.</p>
+                            <p>Elaboración de piezas comunicativas para informar agentes sobre actualización de procesos o corrección de errores.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-info">
+                    <ul>
+                        <li>Concentrix CVG Customer Management Colombia S.A.S</li>
+                        <li>Asesor de servicios</li>
+                        <li>Febrero 2020 - noviembre 2020</li>
+                        <li><p>Atención al cliente de manera telefónica (inglés). </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-info">
+                    <ul>
+                        <li>Ministerio Relaciones Exteriores &#8208; GIT UNESCO</li>
+                        <li>Pasante</li>
+                        <li>Julio 2019 - enero 2020</li>
+                        <li><p>Monitoreo de medios, traducción libre de documentos, redacción de memorandos, oficios y correos, diseño y elaboración de presentaciones, apoyo con otros temas de la Comisión Nacional de Cooperación con UNESCO (inglés y francés).</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-info">
+                    <ul>
+                        <li>Sitel de Colombia</li>
+                        <li>Asesor de servicios</li>
+                        <li>Noviembre 2018 - julio 2019</li>
+                        <li><p>Atención al cliente de manera telefónica (inglés). </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="aboutSection_options">
+
+            </div>
+        </section>
+    </section>
+    
 
     <main>
         <div class ="introduction-parragraph">
@@ -50,12 +225,6 @@
             </p>
         </div>
         <div class="main-section">
-            <a href="about.html" class="mini-section">
-                <div>
-                    <img src="./images/index/me.png" alt="Sobre mí">
-                    <p>Si deseas saber más acerca de mis <strong>gustos, intereses, educación</strong> y más, puedes dirigirte a la sección sobre mí.</p>
-                </div>
-            </a>
             <a href="projects.html" class="mini-section">
                 <div>
                     <img src="./images/index/projects.png" alt="Proyectos">
