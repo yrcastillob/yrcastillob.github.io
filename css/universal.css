@@ -22,6 +22,7 @@
     --gray: #F0F8FF;
     --graypearl: #C0CCE0;
     --black: #1A1A1B;
+    --shadow: #08070838 0rem 0rem 0.4rem
 }
 
 body { margin: 0; }
