@@ -20,7 +20,7 @@
     --orangeTwo:#c07f05;
     --greenDark: #009846;
     --grey: aliceblue;
-    --black: #1A1A1B;
+    --black: #010C0E;
     --babypowder: #f8f8f8;
     --shadow: #08070838 0rem 0.1rem 0.4rem
 }
@@ -35,16 +35,16 @@
 
 html {
     font-size: 62.5%;
-    color: var(--black); 
-    background-color: var(--grey);
+    color: var(--babypowder); 
+    background-color: var(--black);
 }
 
 strong{
-    color: var(--blueTwo);
+    color: var(--greenTwo);
 }
 
 body{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 /********************NAVBAR*********************/
@@ -57,7 +57,7 @@ header{
     justify-content: center;
     align-content: center;
     padding: 0.5rem;
-    border-bottom: rgba(61, 61, 61, 0.075) solid 0.1rem;
+    border-bottom: rgba(206, 205, 205, 0.075) solid 0.1rem;
 }
 
 .navContainer{
@@ -101,6 +101,11 @@ header{
     border-radius: 1.3rem;
 }
 
+.navContainer_menuitems:hover{
+    background-color: rgba(128, 128, 128, 0.11);
+    transition: 0.4s;
+}
+
 .navContainer_menu{
     display: flex;
     flex-flow: row nowrap;
@@ -111,14 +116,14 @@ header{
 
 .navContainer_menu a{
     text-decoration: none;
-    color: var(--black);
+    color: var(--babypowder);
     margin: 0 0.4rem;
     cursor: pointer;
 }
 
 .navContainer_menu a:hover{
     font-weight: bold;
-    color: var(--blue);
+    color: var(--greenTwo);
 }
 
 .navContainer_menu a:active{
@@ -126,7 +131,7 @@ header{
 }
 
 .navContainer_menu--selected{
-    border-bottom: solid 0.2rem var(--blue);
+    border-bottom: solid 0.2rem var(--greenTwo);
 }
 
 /*LANGUAGE*/
@@ -162,7 +167,7 @@ header{
     flex-flow: column nowrap;
     list-style: none;
     width: fit-content;
-    background-color: var(--grey);
+    background-color: var(--black);
     padding: 0.6rem;
     border-radius: 0rem 0rem 1.3rem 1.3rem;
     border-bottom: solid 0.1rem rgba(61, 61, 61, 0.075);
@@ -175,6 +180,8 @@ header{
     flex-flow: row nowrap;
     align-items: center;
     cursor: pointer;
+    margin: 0.5rem 0rem;
+    font-size: 1.2rem;
 }
 
 .navContainer_language .navContainer_language--items li:hover{
@@ -202,6 +209,7 @@ header{
     margin-left: 2rem;
     width: 2rem;
     cursor: pointer;
+    filter:invert(100%);
 }
 
 .navContainer_theme:hover{
@@ -217,7 +225,6 @@ header{
 .navContainer_menuicon{
     display: none;
     height: 2.5rem;
-    filter: invert(100%);
     cursor: pointer;
 }
 
@@ -249,6 +256,21 @@ header{
 .navContainer_menuitems--logo img:active{
     transform: scale(1);
 }
+
+.navContainer_closeicon{
+    width: 1.5rem;
+    display: none;
+    cursor: pointer;
+}
+
+.navContainer_closeicon:hover{
+    transform: scale(1.01);
+}
+
+.navContainer_closeicon:active{
+    transform: scale(1);
+}
+
 /********************* MEDIA QUERIES *********************/
 
 @media screen and (max-width: 1007px) {
@@ -266,10 +288,15 @@ header{
         left: 0; 
         width: 100%; 
         height: 100%;
-        background-color: var(--grey); 
+        background-color: var(--black); 
         z-index: 1000; 
-        display: flex;
+        display: none;
         flex-flow: column nowrap;
+        justify-content: space-evenly;
+    }
+
+    .navContainer_menuitems:hover{
+        background-color: var(--black);
     }
 
     .navContainer{
@@ -280,6 +307,7 @@ header{
         display: flex;
     }
 
+    
     .navContainer_menu{
         flex-flow: column;
     }
@@ -290,18 +318,26 @@ header{
 
     .navContainer_language--mainimage{
         display: none;
+        
     }
 
     .navContainer_language--items{
         display: flex;
-        flex-flow: row;
-        border: solid 0.2rem rgba(61, 61, 61, 0.075);
+        flex-flow: column wrap;
+        border: solid 0.2rem rgba(165, 164, 164, 0.075);
         border-radius: 1.3rem;
         padding: 0.6rem;
+        position: static;
     }
 
-    .navContainer_language--items li{
-        margin: 0 0.5rem;
-        font-size: 1.2rem;
+    .navContainer_theme{
+        display: flex;
+    }
+
+    .navContainer_closeicon{
+        display: flex;
+        position: absolute;
+        top: 4%;
+        right: 4%;
     }
   }
