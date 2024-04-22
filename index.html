@@ -33,19 +33,20 @@
                 </div>
 
                 <div class="navContainer_menu">
-                    <a href="" class="navContainer_menu--selected">About Me</a>
-                    <a href="">Projects</a>
+                    <a href="#chatContainer" class="navContainer_menu--selected" id="aboutmemenu"></a>
+                    <a href="" id="projectsmenu"></a>
+                    <a href="" id="writingmenu"></a>
                 </div>
         
                 <div class="navContainer_language">
 
-                    <div class="navContainer_language--mainimage"></div>
+                    <div class="navContainer_language--mainimage" id="navlanguageimage"></div>
 
                     <ul class="navContainer_language--items">
-                        <li> <img src="./images/index/spanish.svg" alt="Español">Español</li>
-                        <li> <img src="./images/index/english.svg" alt="English">English</li>
-                        <li> <img src="./images/index/french.svg" alt="Français">Français</li>
-                        <li> <img src="./images/index/portuguese.svg" alt="Português">Português</li>
+                        <li onclick="changeLanguage( 'es' )"> <img src="./images/index/spanish.svg" alt="Español">Español</li>
+                        <li onclick="changeLanguage( 'en' )"> <img src="./images/index/english.svg" alt="English">English</li>
+                        <li onclick="changeLanguage( 'fr' )"> <img src="./images/index/french.svg" alt="Français">Français</li>
+                        <li onclick="changeLanguage( 'pt' )"> <img src="./images/index/portuguese.svg" alt="Português">Português</li>
                     </ul>
                 </div>
         
@@ -56,21 +57,32 @@
         </nav>
     </header>
     
-    <div class="chatContainer">
+    <div class="chatContainer" id="chatContainer">
+
+        <div class="chatContainer_contactInformation"> 
+
+            <div class="chatContainer_contactInformation--email">
+                <p id="sendmemessagetag"></p>
+                <img src="./images/index/email.svg" alt="Send email" class="chatContainer_contactInformation--img">
+            </div>
+
+            <a href="https://www.linkedin.com/in/yeissoncastillo/" target="_blank" title="Go to linkedin" class="chatContainer_contactInformation--social">
+                <img src="./images/index/linkedin.svg" alt="Go to LinkedIn" class="chatContainer_contactInformation--img">
+            </a>
+
+        </div>
+
         <div class="chatContainer_messages" id="chatmessages">
-            <div class="systemmessage">
-                Bienvenido, averigua lo que desees.
+            <div class="systemmessage welcomemessage" id="welcomemessage">
+                
             </div>
             <div class="usermessage">
                 Mensaje del usuario
             </div>
         </div>
         <div class="chatContainer_input">
-            <div class="chatContainer_input--input">
-                <div class="chatContainer_input--inputoptions"></div>
-                <input type="text">
-                <div><img src="./images/index/send.svg" alt="Send"></div>
-            </div>
+            <div class="chatContainer_input--option">Option 1234</div>
+            <div class="chatContainer_input--option">Option 1</div>
         </div>
     </div>
 </body>
