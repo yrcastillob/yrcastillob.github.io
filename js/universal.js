@@ -89,16 +89,6 @@ const htmlContent = {
     }
 }
 
-
-const pairingHtmlContent = [
-    //List pairing HTML elements names with content
-    ["aboutmemenu", htmlContent.menuOptions.about],
-    ["projectsmenu", htmlContent.menuOptions.projects],
-    ["writingmenu", htmlContent.menuOptions.writings],
-    ["sendmemessagetag", htmlContent.contactMeIcon],
-    ["welcomemessage",htmlContent.welcomemessage]
-];
-
 // Interactive CV
 
 const responsesInteractiveCV = {
@@ -148,10 +138,10 @@ const responsesInteractiveCV = {
     },
     profile:{
         title: {
-            es: "Perfil profesional",
-            en: "Professional Profile",
-            fr: "Profil professionnel",
-            pt: "Perfil profissional"
+            es: "Perfil",
+            en: "Profile",
+            fr: "Profil",
+            pt: "Perfil"
         },
         es: `<p>Soy un <strong>desarrollador junior full stack</strong>, graduado en <strong>Ingeniería de Sistemas</strong> en 2024 por la Universidad Ean. Además, soy <strong>profesional de Lenguas Modernas</strong> con énfasis en comunicación organizacional, obteniendo mi título en 2020. Mi interés se centra en el desarrollo tanto del front end como del back end con miras a convertirme en un full stack senior.</p>
         <br>
@@ -592,6 +582,22 @@ const questionsInteractiveCV = {
     }
 }
 
+
+const pairingHtmlContent = [
+    //List pairing HTML elements names with content
+    ["aboutmemenu", htmlContent.menuOptions.about],
+    ["projectsmenu", htmlContent.menuOptions.projects],
+    ["writingmenu", htmlContent.menuOptions.writings],
+    ["sendmemessagetag", htmlContent.contactMeIcon],
+    ["welcomemessage",htmlContent.welcomemessage],
+    ["educationbutton",responsesInteractiveCV.education.title],
+    ["profilebutton",responsesInteractiveCV.profile.title],
+    ["experiencebutton",responsesInteractiveCV.workExperience.title],
+    ["languagebutton",responsesInteractiveCV.languages.title],
+    ["skillsbutton",responsesInteractiveCV.skills.title],
+];
+
+
 /*************************** COOKIES ***************************/
 
 function setCookie(cname, cvalue, exdays) {
@@ -617,6 +623,86 @@ function getCookie(cname) {
     }
     return "";
 }
+
+/**************************FUNCTION TO MANAGE CHAT**************************/
+
+function getInteractiveCVInfo( topic, objectSelection ){
+    /*Function to obtain the object related to the dynamic CV that im creating
+    Params:
+        Topics: integer to select topic: 1 to education, 2 langauges, 3 profile, 4 skills, 5 work experience.
+        objectSelection: object that contains the responses. it must have properties education languages
+        profile skills and workexperience
+    */
+    let object = null;
+    switch(topic){
+        case 1:
+            object = objectSelection.education;
+            break;
+        case 2:
+            object = objectSelection.languages;
+            break;
+        case 3:
+            object = objectSelection.profile;
+            break;
+        case 4:
+            object = objectSelection.skills;
+            break;
+        case 5:
+            object = objectSelection.workExperience;
+            break;
+    }
+
+    return object;
+}
+
+
+function createMessage( className, object ){
+    /*Function to create html message in the chat element.
+    Params:
+    object = Object that contains the data to be retrieved.
+    className = class that will be asssigned, it can be usermessage or systemmessage*/
+    language = getCookie( languageName );
+    let innerContent = "";
+    const chat = document.getElementById("chatmessages");
+    switch ( language ){
+        case es:
+            innerContent = object.es;
+            break;
+        case en:
+            innerContent = object.en;
+            break;
+        case fr:
+            innerContent = object.fr;
+            break;
+        case pt:
+            innerContent = object.pt;
+            break;
+    }
+    let div = document.createElement("div");
+    div.classList.add(className);
+    div.innerHTML = innerContent;
+    chat.appendChild(div);
+    scrollDownChat()
+}
+
+function scrollDownChat() {
+    /*Function so it always shows the last message in the screen of the chat*/
+    var container = document.getElementById("chatmessages");
+    container.scrollTop = container.scrollHeight;
+}
+
+function interactCV( topic ){
+    /*Function to ask and receive the answer about my profile as an interactive cv*/
+    setTimeout(function() {
+        createMessage( "usermessage", getInteractiveCVInfo( topic, questionsInteractiveCV ));
+    }, 300);
+
+    setTimeout(function() {
+        createMessage("systemmessage", getInteractiveCVInfo(topic, responsesInteractiveCV));
+    }, 1100);
+
+}
+
 
 /**************************FUNCTION TO CHANGE LANGUAGE**************************/
 
@@ -717,6 +803,7 @@ function initialSetting(){
 
     insertLanguageWebHtmlElements( pairingHtmlContent );
     changeImageLangue ( "navlanguageimage" );
+    scrollDownChat()
 }
 
 function display(id,typeDisplay){
@@ -748,13 +835,8 @@ function changeTheme(){
     }
 }
 
-function scrollDownChat() {
-    /*Function so it always shows the last message in the screen of the chat*/
-    var container = document.getElementById("chatmessages");
-    container.scrollTop = container.scrollHeight;
-}
+
 
 /***************************** CHAT FUNCTIONS ******************************/
 
 initialSetting()
-scrollDownChat()
