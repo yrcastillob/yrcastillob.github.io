@@ -59,7 +59,7 @@ const htmlContent = {
         en: `
         Welcome to my personal website!
         <p class="welcomemessage--title">Recommendations</p>
-        <ul>
+        <ul class="welcomemessage--list">
             <li>Use the round flag in the top menu to change the language.</li>
             <li>The moon/sun icon in the top menu toggles between dark and light mode.</li>
             <li>Access accessibility options using the symbol located to your right.</li>
@@ -69,7 +69,7 @@ const htmlContent = {
         fr: `
         Bienvenue sur mon site web personnel !
         <p class="welcomemessage--title">Recommandations</p>
-        <ul>
+        <ul class="welcomemessage--list">
             <li>Utilisez le drapeau rond dans le menu supérieur pour changer de langue.</li>
             <li>L'icône lune/soleil dans le menu supérieur bascule entre le mode sombre et clair.</li>
             <li>Accédez aux options d'accessibilité en utilisant le symbole situé à votre droite.</li>
@@ -79,7 +79,7 @@ const htmlContent = {
         pt: `
         Bem-vindo ao meu site pessoal!
         <p class="welcomemessage--title">Recomendações</p>
-        <ul>
+        <ul class="welcomemessage--list">
             <li>Use a bandeira redonda no menu superior para mudar o idioma.</li>
             <li>O ícone de lua/sol no menu superior alterna entre o modo escuro e claro.</li>
             <li>Acesse as opções de acessibilidade usando o símbolo localizado à sua direita.</li>
@@ -101,38 +101,38 @@ const responsesInteractiveCV = {
         },
         es:`<p>Esta es mi educación: </p>
         <br> 
-        <strong>Ingeniería de Sistemas.</strong>
+        <strong>💻 Ingeniería de Sistemas.</strong>
         <p>Universidad Ean.</p>
         <p>2024<p>
         <br> 
-        <strong>Lenguas Modernas, énfasis en Comunicación Organizacional.</strong>
+        <strong>📖 Lenguas Modernas, énfasis en Comunicación Organizacional.</strong>
         <p>Universidad Ean.</p>
         <p>2020<p>`,
         en:`<p>This is my education: </p>
         <br> 
-        <strong>Bachelor's degree in System Engineering.</strong>
+        <strong>💻 Bachelor's degree in System Engineering.</strong>
         <p>Ean University</p>
         <p>2024<p>
         <br> 
-        <strong>Bachelor's degree in Modern Languages, major in Organizational Communication.</strong>
+        <strong>📖 Bachelor's degree in Modern Languages, major in Organizational Communication.</strong>
         <p>Ean University</p>
         <p>2020<p>`,
         pt:`<p>Esta é a minha educação:</p>
         <br> 
-        <strong>Bacharelado em Engenharia de Sistemas.</strong>
+        <strong>💻 Bacharelado em Engenharia de Sistemas.</strong>
         <p>Universidade Ean</p>
         <p>2024<p>
         <br> 
-        <strong>Bacharelado em Línguas Modernas, com ênfase em Comunicação Organizacional.</strong>
+        <strong>📖 Bacharelado em Línguas Modernas, com ênfase em Comunicação Organizacional.</strong>
         <p>Universidade Ean</p>
         <p>2020<p>`,
         fr:`<p>Mon éducation :</p>
         <br> 
-        <strong>Diplôme de licence en Ingénierie des Systèmes.</strong>
+        <strong>💻 Diplôme de licence en Ingénierie des Systèmes.</strong>
         <p>Université Ean</p>
         <p>2024<p>
         <br> 
-        <strong>Diplôme de licence en Langues Modernes, spécialisation en Communication Organisationnelle. </strong>
+        <strong>📖 Diplôme de licence en Langues Modernes, spécialisation en Communication Organisationnelle. </strong>
         <p>Université Ean</p>
         <p>2020<p>`
     },
@@ -338,30 +338,30 @@ const responsesInteractiveCV = {
             fr: "Langues",
             pt: "Idiomas"
         },
-        es: `
+        es:  `
         <div class='cvresponse_languages'>
-            <div class='cvresponse_languages--item'>
-                <img src="../images/index/spanish.svg" alt="languagescv" >
-                <p>Español</p>
-                <p>Nativo</p>
-            <div>
-            <div class='cvresponse_languages--item'>
-                <img src="../images/index/english.svg" alt="languagescv" >
-                <p>Inglés</p>
-                <p>C1 - Certificado IELTS Academics 2023</p>
-            <div>
-            <div class='cvresponse_languages--item'>
-                <img src="../images/index/french.svg" alt="languagescv" >
-                <p>Francés</p>
-                <p>B2 - DELF Certificado 2020</p>
-            <div>
-            <div class='cvresponse_languages--item'>
-                <img src="../images/index/portuguese.svg" alt="languagescv" >
-                <p>Portugués</p>
-                <p>B2 - CELEBRAS Certificado 2019</p>
-            <div>
+        <div class='cvresponse_languages--item'>
+            <img src="../images/index/spanish.svg" alt="languagescv" >
+            <p>Español</p>
+            <p>Nativo</p>
         </div>
-        `,
+        <div class='cvresponse_languages--item'>
+            <img src="../images/index/english.svg" alt="languagescv" >
+            <p>Inglés</p>
+            <p>C1 - Certificado IELTS Academics 2023</p>
+        </div>
+        <div class='cvresponse_languages--item'>
+            <img src="../images/index/french.svg" alt="languagescv" >
+            <p>Francés</p>
+            <p>B2 - Certificado DELF 2020</p>
+        </div>
+        <div class='cvresponse_languages--item'>
+            <img src="../images/index/portuguese.svg" alt="languagescv" >
+            <p>Portugués</p>
+            <p>B2 - Certificado CELEBRAS 2019</p>
+        </div>
+         </div>
+             `,
         en: `
         <div class='cvresponse_languages'>
         <div class='cvresponse_languages--item'>
@@ -551,34 +551,34 @@ const responsesInteractiveCV = {
 
 const questionsInteractiveCV = {
     education: {
-        es: '¿Cuál es tu educación?',
-        en: 'What is your education?',
-        fr: 'Quelle est votre éducation?',
-        pt: 'Qual é a sua educação?'
+        es: '¿Cuál es tu educación? 👓',
+        en: 'What is your education? 👓',
+        fr: 'Quelle est votre éducation? 👓',
+        pt: 'Qual é a sua educação? 👓'
     },
     profile:{
-        es: '¿Cuál es tu perfil profesional?',
-        en: 'What is your professional profile?',
-        fr: 'Quel est votre profil professionnel ?',
-        pt: 'Qual é o seu perfil profissional?'
+        es: '¿Cuál es tu perfil profesional? 👔',
+        en: 'What is your professional profile? 👔',
+        fr: 'Quel est votre profil professionnel ? 👔',
+        pt: 'Qual é o seu perfil profissional? 👔'
     },
     languages:{
-        es: '¿Qué idiomas hablas?',
-        en: 'What languages do you speak?',
-        fr: 'Quelles langues parles-tu ?',
-        pt: 'Quais idiomas você fala?'
+        es: '🔊 ¿Qué idiomas hablas?',
+        en: '🔊 What languages do you speak?',
+        fr: '🔊 Quelles langues parles-tu ?',
+        pt: '🔊 Quais idiomas você fala?'
     },
     workExperience: {
-        es: '¿Cuál es tu experiencia profesional?',
-        en: 'What is your professional experience?',
-        fr: 'Quelle est votre expérience professionnelle ?',
-        pt: 'Qual é a sua experiência profissional?'
+        es: '¿Cuál es tu experiencia profesional? 🧾',
+        en: 'What is your professional experience? 🧾',
+        fr: 'Quelle est votre expérience professionnelle ? 🧾',
+        pt: 'Qual é a sua experiência profissional? 🧾'
     },
     skills: {
-        es: '¿Cuáles son tus habilidades?',
-        en: 'What are your skills?',
-        fr: 'Quelles sont vos compétences ?',
-        pt: 'Quais são as suas habilidades?'
+        es: '¿Cuáles son tus habilidades? 📑',
+        en: 'What are your skills? 📑',
+        fr: 'Quelles sont vos compétences ? 📑',
+        pt: 'Quais são as suas habilidades? 📑'
     }
 }
 
@@ -637,18 +637,23 @@ function getInteractiveCVInfo( topic, objectSelection ){
     switch(topic){
         case 1:
             object = objectSelection.education;
+            object.className = "messageEducation";
             break;
         case 2:
             object = objectSelection.languages;
+            object.className = "messageLanguage";
             break;
         case 3:
             object = objectSelection.profile;
+            object.className = "messageProfile";
             break;
         case 4:
             object = objectSelection.skills;
+            object.className = "messageSkills";
             break;
         case 5:
             object = objectSelection.workExperience;
+            object.className = "messageWorkExperiece";
             break;
     }
 
@@ -680,6 +685,9 @@ function createMessage( className, object ){
     }
     let div = document.createElement("div");
     div.classList.add(className);
+    if (className === "systemmessage"){
+        div.classList.add(object.className);
+    }
     div.innerHTML = innerContent;
     chat.appendChild(div);
     scrollDownChat()

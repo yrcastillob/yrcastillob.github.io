@@ -380,9 +380,19 @@ header{
     transition: 0.4s;
 }
 
-.welcomemessage ul{
+div#welcomemessage ul {
     list-style: none;
     margin-left: 3rem;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+div#welcomemessage ul li{
+    list-style: none;
+    margin-left: 3rem;
+    background-color: #CCCCCC;
 }
 
 .welcomemessage ul li::before{
@@ -395,6 +405,7 @@ header{
     color: var(--blueTwo);
     animation: example 5s ease-in-out 0.4s 1 normal both running;
 }
+
 
 @keyframes example {
     25%  {color:var(--greenDark)}
@@ -409,7 +420,7 @@ header{
     max-width: 80%;
     border-radius: 0rem 2rem 2rem 2rem;
     width: fit-content;
-    padding: 1rem;
+    padding: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -419,9 +430,97 @@ header{
     max-width: 80%;
     border-radius: 2rem 0rem 2rem 2rem;
     width: fit-content;
-    padding: 1rem;
+    padding: 2rem;
     margin-bottom: 1rem;
     align-self: flex-end;
+}
+
+
+.chatContainer_messages p{
+    line-height: 1.4;
+}
+
+
+/*Education message*/
+
+.chatContainer_messages .messageEducation strong {
+    color: var(--black);
+    padding: 0.4rem;
+    border-top: solid 0.1rem rgba(61, 61, 61, 0.397);
+}
+
+/*Skills message*/
+
+
+.chatContainer_messages .messageSkills ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 1rem 0rem;
+}
+
+.chatContainer_messages .messageSkills ul li {
+    list-style: none;
+    margin: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 1.3rem;
+    border: solid 0.1rem rgba(61, 61, 61, 0.397);
+    background-color: rgba(65, 190, 248, 0.945);
+}
+
+/*Work Experience message*/
+
+.chatContainer_messages .messageWorkExperiece strong {
+    color: var(--black);
+    font-weight: bolder;
+}
+
+.chatContainer_messages .messageWorkExperiece strong + p{
+    font-weight: bolder;
+}
+
+.chatContainer_messages .messageWorkExperiece ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    margin-left: 3rem;
+    font-size: 1.4rem;
+}
+
+.chatContainer_messages .messageWorkExperiece ul li::before{
+    content: "💠 ";
+}
+
+/*Language message*/
+
+.chatContainer_messages .messageLanguage div{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.chatContainer_messages .messageLanguage .cvresponse_languages--item{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 12rem;
+    margin: 0.8rem;
+    align-items: center;
+}
+
+.chatContainer_messages .messageLanguage .cvresponse_languages--item img{
+    width: 4rem;
+}
+
+.chatContainer_messages .messageLanguage .cvresponse_languages--item img + p{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 0.8rem 0;
+}
+
+.chatContainer_messages .messageLanguage .cvresponse_languages--item p{
+    text-align: center;
 }
 
 /*Options section*/
