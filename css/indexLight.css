@@ -47,6 +47,16 @@ body{
     font-size: 1.6rem;
 }
 
+html{
+    scroll-snap-type: y mandatory; 
+    scroll-padding-top: 5rem;
+}
+
+.section{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
 /********************NAVBAR*********************/
 
 header{
@@ -58,6 +68,10 @@ header{
     align-content: center;
     padding: 0.5rem;
     border-bottom: rgba(61, 61, 61, 0.075) solid 0.1rem;
+    position: sticky;
+    top: 0%;
+    background-color: var(--grey);
+    z-index: 100;
 }
 
 .navContainer{
@@ -173,7 +187,7 @@ header{
     border-bottom: solid 0.1rem rgba(61, 61, 61, 0.075);
     border-left: solid 0.1rem rgba(61, 61, 61, 0.075);
     border-right: solid 0.1rem rgba(61, 61, 61, 0.075);
-    z-index: 3;
+    z-index: 100;
 }
 
 .navContainer_language--items li{
@@ -406,12 +420,11 @@ div#welcomemessage ul li{
     animation: example 5s ease-in-out 0.4s 1 normal both running;
 }
 
-
 @keyframes example {
     25%  {color:var(--greenDark)}
     50%  {color:var(--orangeTwo)}
-    75%  {color:var(--yellowTwo)}
-    100% {color:var(--blueTwo)}
+    75%  {color:var(--blue)}
+    100% {color:var(--black)}
   }
 
 .systemmessage{
@@ -576,7 +589,95 @@ div#welcomemessage ul li{
     border-radius: 2rem;
   }
   
+/********************* PROJECTS SECTION *********************/
 
+.projetsContainer{
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.projetsContainer_filter--title{
+    margin-left: 1rem;
+    font-size: 3rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*Filter part*/
+.projetsContainer_filter{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.projetsContainer_filter--instruction{
+    font-size: 1.8rem;
+    font-weight: bolder;
+    margin-right: 1rem;
+}
+
+.projetsContainer_filter--options{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.projetsContainer_filter--options img{
+    width: 4rem;
+    padding: 0.5rem;
+    border: solid 0.1rem rgba(61, 61, 61, 0.397);
+    border-radius: 1.3rem;
+    margin: 0.8rem;
+    cursor: pointer;
+    filter: invert(50%);
+}
+
+.projetsContainer_filter--options img:hover{
+    width: 4.3rem;
+    background-color: var(--orangeTwo);
+    transition: 0.2s;
+    filter: invert(100%);
+}
+
+.projetsContainer_filter--options img:active{
+    width: 4.1rem;
+    transition: 0.2s;
+}
+
+.projetsContainer_filter--options .projetsContainer_filter--options--selected {
+    filter: invert(100%);
+    background-color: rgb(238, 238, 238);
+    border: none;
+}
+
+/*Projects part*/
+
+.projetsContainer_item{
+    height: 20rem;
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.projetsContainer_item--background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.projetsContainer_item--background img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
 
 /********************* MEDIA QUERIES *********************/
 
