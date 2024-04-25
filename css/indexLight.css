@@ -48,7 +48,7 @@ body{
 }
 
 html{
-    scroll-snap-type: y mandatory; 
+    scroll-snap-type: y proximity; 
     scroll-padding-top: 5rem;
 }
 
@@ -583,8 +583,7 @@ div#welcomemessage ul li{
     border-radius: 1.3rem;
 }
   
-  /* Handle */
-  .chatContainer_input::-webkit-scrollbar-thumb {
+.chatContainer_input::-webkit-scrollbar-thumb {
     background: var(--blue);
     border-radius: 2rem;
   }
@@ -617,12 +616,32 @@ div#welcomemessage ul li{
     font-size: 1.8rem;
     font-weight: bolder;
     margin-right: 1rem;
+    min-width: 18rem;
 }
 
 .projetsContainer_filter--options{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    width: calc(100vw-18rem);
+    margin-bottom: 1rem;
+}
+
+.projetsContainer_filter--options::-webkit-scrollbar{
+    height: 0.8rem;
+}
+
+.projetsContainer_filter--options::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.123);
+    border-radius: 1.3rem;
+}
+  
+.projetsContainer_filter--options::-webkit-scrollbar-thumb {
+    background: var(--black);
+    border-radius: 2rem;
 }
 
 .projetsContainer_filter--options img{
@@ -633,6 +652,8 @@ div#welcomemessage ul li{
     margin: 0.8rem;
     cursor: pointer;
     filter: invert(50%);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 .projetsContainer_filter--options img:hover{
@@ -653,14 +674,24 @@ div#welcomemessage ul li{
     border: none;
 }
 
-/*Projects part*/
+/*Projects card*/
 
 .projetsContainer_item{
     height: 20rem;
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
     position: relative;
     overflow: hidden;
+    padding: 3rem;
+    filter:grayscale(100%);
+    transition: 0.3s;
+}
+
+.projetsContainer_item:hover{
+    filter: grayscale(0%);
+    height: 26rem;
+    transition: 0.3s;
 }
 
 .projetsContainer_item--background {
@@ -678,7 +709,80 @@ div#welcomemessage ul li{
     height: 100%;
     object-fit:cover;
 }
+.projetsContainer_item--links{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 30rem;
+    justify-content: center;
+}
 
+.projetsContainer_item--links .projetsContainer_item--linkpage , .projetsContainer_item--links .projetsContainer_item--github {
+    padding: 1rem;
+    background-color: rgba(240, 248, 255, 0.527);
+    border-radius: 1.3rem;
+    margin: 1rem;
+    filter: drop-shadow(var(--shadow));
+}
+
+.projetsContainer_item--linkpage:hover , .projetsContainer_item--github:hover {
+    transform: scale(1.06);
+    transition: 0.3s;
+}
+
+.projetsContainer_item--linkpage:active , .projetsContainer_item--github:active {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+.projetsContainer_item--linkpage img, .projetsContainer_item--github img{
+    width: 8rem;
+}
+
+.projetsContainer_item--description{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background-color: rgba(240, 248, 255, 0.527);
+    filter: drop-shadow(var(--shadow));
+    padding: 1rem;
+    border-radius: 1.3rem;
+    height: 15rem;
+    width: 80%
+}
+
+.projetsContainer_item--description--title{
+    font-size: 2rem;
+    font-weight: bolder;
+    font-family: var(--title);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 90%;
+    max-height: 4rem;
+}
+
+.projetsContainer_item--description--technology{
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 1rem 0;
+    max-height: 4rem;
+}
+
+.projetsContainer_item--description--technology li{
+    padding: 0.4rem 0.8rem;
+    margin: 0 1rem;
+    background-color: var(--black);
+    color: var(--grey);
+    border-radius: 1.3rem;
+}
+
+.projetsContainer_item--description--text{
+    max-height: 4rem;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 /********************* MEDIA QUERIES *********************/
 
 @media screen and (max-width: 1007px) {
@@ -747,5 +851,33 @@ div#welcomemessage ul li{
         position: absolute;
         top: 4%;
         right: 4%;
+    }
+
+    .projetsContainer_item{
+        flex-flow: column nowrap;
+        height: 30rem;
+    }
+
+    .projetsContainer_item:hover{
+        height: 34rem;
+        transition: 0.3s;
+    }
+
+    .projetsContainer_item--description{
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .projetsContainer_item--description--title{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 90%;
+        max-height: 5rem;
+    }
+
+    .chatContainer_messages .messageEducation strong {
+        border: none
     }
   }

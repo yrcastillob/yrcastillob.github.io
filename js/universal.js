@@ -10,6 +10,21 @@ const pt = "pt";
 let theme;
 let language;
 
+// TechnologyNames
+const techonologyNames = {
+    py: "python",
+    js: "JavaScript",
+    html:  "HTML",
+    css: "CSS", 
+    java: "Java",
+    bootstrap: "bootstrap",
+    express: "express",
+    mongo: "mongo",
+    php: "php",
+    sql: "sql"
+}
+
+
 // Managing Theme
 const indexCss = document.getElementById("stylesheet");
 const themeIcon = document.getElementById("themeicon");
@@ -582,6 +597,107 @@ const questionsInteractiveCV = {
     }
 }
 
+/*Projects */
+
+const projectsDatabase = {
+    one: {
+        techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
+        git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/encrtypting_messages",
+        web: "",
+        icon: "",
+        background: "https://i.ibb.co/DwTDqbP/encrypter.jpg",
+        title: {
+            es: 'Encriptador de mensajes',
+            en: 'Message Encrypter',
+            fr: 'Crypteur de Messages',
+            pt: 'Encriptador de Mensagens'
+        },
+        description:  {
+            es: 'Encriptar mensajes con una frase clave y tabla maestra.',
+            en: 'Encrypt messages with a passphrase and master table.',
+            fr: 'Chiffrer les messages avec une phrase secrète et une table maîtresse.',
+            pt: 'Criptografar mensagens com uma frase-chave e tabela mestre.'
+        },
+    },
+    two: {
+        techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
+        git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/cards_deck_shuffle",
+        web: "",
+        icon: "",
+        background: "https://i.ibb.co/zRcpSzd/sufflecards.jpg",
+        title: {
+            es: 'Ejercicio de Barajar Cartas',
+            en: 'Shuffle Cards Exercise',
+            fr: 'Exercice de Mélange de Cartes',
+            pt: 'Exercício de Embaralhar Cartas'
+        },
+        description:  {
+            es: 'Barajar cartas por cantidad de personas y número de cartas.',
+            en: 'Shuffle cards by number of people and number of cards.',
+            fr: 'Mélanger les cartes par nombre de personnes et nombre de cartes.',
+            pt: 'Embaralhar cartas por número de pessoas e número de cartas.'
+        },
+    },
+    three: {
+        techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
+        git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/guess_the_word",
+        web: "",
+        icon: "",
+        background: "https://i.ibb.co/BTs9khS/guessword.jpg",
+        title: {
+            es: 'Adivina la palabra',
+            en: 'Guess the word game',
+            fr: 'Devinez le mot',
+            pt: 'Adivinhe a palavra'
+        },
+        description:  {
+            es: 'Adivina el concepto sobre los patrones de diseño.',
+            en: 'Guess the concept about design patterns.',
+            fr: 'Devinez le concept sur les schémas de conception.',
+            pt: 'Adivinhe o conceito sobre os padrões de design.'
+        },
+    },
+    four: {
+        techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
+        git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/guess_the_word",
+        web: "",
+        icon: "",
+        background: "https://i.ibb.co/BTs9khS/guessword.jpg",
+        title: {
+            es: 'Adivina la palabra',
+            en: 'Guess the word game',
+            fr: 'Devinez le mot',
+            pt: 'Adivinhe a palavra'
+        },
+        description:  {
+            es: 'Adivina el concepto sobre los patrones de diseño.',
+            en: 'Guess the concept about design patterns.',
+            fr: 'Devinez le concept sur les schémas de conception.',
+            pt: 'Adivinhe o conceito sobre os padrões de design.'
+        },
+    },
+    five: {
+        techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
+        git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/managing_book_stack",
+        web: "",
+        icon: "",
+        background: "https://i.ibb.co/NmrZgFT/managebookstack.jpg",
+        title: {
+            es: 'Administrar pila de libros',
+            en: 'Manage book stack',
+            fr: 'Gérer la pile de livres',
+            pt: 'Gerenciar pilha de livros'
+        },
+        description:  {
+            es: 'Ejercicio para manejar pila de libros con arrays.',
+            en: 'Exercise for managing book stacks with arrays.',
+            fr: 'Exercice pour gérer des piles de livres avec des arrays.',
+            pt: 'Exercício para gerenciar pilhas de livros com arrays.'
+        },
+    },
+}
+
+/*Pair of content*/
 
 const pairingHtmlContent = [
     //List pairing HTML elements names with content
@@ -843,7 +959,7 @@ function changeTheme(){
     }
 }
 
-
+/*  */
 
 /***************************** CHAT FUNCTIONS ******************************/
 
