@@ -1,0 +1,26 @@
+.collection{
+    padding: 12px;
+}
+
+.messagesBox{
+    position: absolute;
+    top: 14%;
+    right: 2%;
+}
+
+.errorMessage{
+    background-color: #ffd740 ;
+    padding: 10px ;
+    border-radius: 18px ;
+}
+
+.successMessage{
+    background-color: #00bfa5 ;
+    padding: 10px ;
+    border-radius: 18px ;
+}
+
+.container .collection h2{
+    font-size: 35px;
+    text-align: center;
+}

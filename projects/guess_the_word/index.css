@@ -1,0 +1,308 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-size: 10px; 
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--body);
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='400' cy='400' r='0%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%230EF'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='400' cy='400' r='100%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%230FF'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='800'/%3E%3Cg fill-opacity='.8'%3E%3Cpath fill='url(%23b)' d='M998.7 439.2c1.7-26.5 1.7-52.7 0.1-78.5L401 399.9c0 0 0-0.1 0-0.1l587.6-116.9c-5.1-25.9-11.9-51.2-20.3-75.8L400.9 399.7c0 0 0-0.1 0-0.1l537.3-265c-11.6-23.5-24.8-46.2-39.3-67.9L400.8 399.5c0 0 0-0.1-0.1-0.1l450.4-395c-17.3-19.7-35.8-38.2-55.5-55.5l-395 450.4c0 0-0.1 0-0.1-0.1L733.4-99c-21.7-14.5-44.4-27.6-68-39.3l-265 537.4c0 0-0.1 0-0.1 0l192.6-567.4c-24.6-8.3-49.9-15.1-75.8-20.2L400.2 399c0 0-0.1 0-0.1 0l39.2-597.7c-26.5-1.7-52.7-1.7-78.5-0.1L399.9 399c0 0-0.1 0-0.1 0L282.9-188.6c-25.9 5.1-51.2 11.9-75.8 20.3l192.6 567.4c0 0-0.1 0-0.1 0l-265-537.3c-23.5 11.6-46.2 24.8-67.9 39.3l332.8 498.1c0 0-0.1 0-0.1 0.1L4.4-51.1C-15.3-33.9-33.8-15.3-51.1 4.4l450.4 395c0 0 0 0.1-0.1 0.1L-99 66.6c-14.5 21.7-27.6 44.4-39.3 68l537.4 265c0 0 0 0.1 0 0.1l-567.4-192.6c-8.3 24.6-15.1 49.9-20.2 75.8L399 399.8c0 0 0 0.1 0 0.1l-597.7-39.2c-1.7 26.5-1.7 52.7-0.1 78.5L399 400.1c0 0 0 0.1 0 0.1l-587.6 116.9c5.1 25.9 11.9 51.2 20.3 75.8l567.4-192.6c0 0 0 0.1 0 0.1l-537.3 265c11.6 23.5 24.8 46.2 39.3 67.9l498.1-332.8c0 0 0 0.1 0.1 0.1l-450.4 395c17.3 19.7 35.8 38.2 55.5 55.5l395-450.4c0 0 0.1 0 0.1 0.1L66.6 899c21.7 14.5 44.4 27.6 68 39.3l265-537.4c0 0 0.1 0 0.1 0L207.1 968.3c24.6 8.3 49.9 15.1 75.8 20.2L399.8 401c0 0 0.1 0 0.1 0l-39.2 597.7c26.5 1.7 52.7 1.7 78.5 0.1L400.1 401c0 0 0.1 0 0.1 0l116.9 587.6c25.9-5.1 51.2-11.9 75.8-20.3L400.3 400.9c0 0 0.1 0 0.1 0l265 537.3c23.5-11.6 46.2-24.8 67.9-39.3L400.5 400.8c0 0 0.1 0 0.1-0.1l395 450.4c19.7-17.3 38.2-35.8 55.5-55.5l-450.4-395c0 0 0-0.1 0.1-0.1L899 733.4c14.5-21.7 27.6-44.4 39.3-68l-537.4-265c0 0 0-0.1 0-0.1l567.4 192.6c8.3-24.6 15.1-49.9 20.2-75.8L401 400.2c0 0 0-0.1 0-0.1L998.7 439.2z'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+:root {
+    --title: "Press Start 2P", system-ui;
+    --body: "Play", sans-serif;
+    --primaryBlue: #add8e6;
+    --primaryYellow: #ffd700;
+    --primaryMind: #98fb98;
+    --blueSky: #87ceeb;
+    --yellowCake: #ffeead;
+    --greenLime: #bfff80;
+    --turquoise: #40e0d0;
+    --yellowClair: #fffacd;
+    --greenApple: #aaffc3;
+    --celestial: #b0e0e6;
+    --shadow:  drop-shadow(rgba(0, 0, 0, 0.479) 0rem 0.3rem 0.5rem);
+}
+
+/*MAIN SECTION*/
+main {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* MAIN CARD */
+.mainCard{
+    width: 50%;
+    margin: auto;
+    background: linear-gradient(#98fb98, #aaffc3);
+    padding: 2rem;
+    border-radius: 1.8rem;
+    filter: var(--shadow);
+}
+
+/* MAIN CARD SCORE */
+
+.mainCard_Statistics--score p span{
+    font-weight: 800;
+    margin-left: 1rem;
+    filter: var(--shadow);
+}
+
+/* MAIN CARD STATISTICS */
+
+.mainCard_Statistics{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainCard_Statistics p {
+    margin-bottom: 0.5rem;
+}
+
+.mainCard_Statistics--life {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.mainCard_Statistics--life p{
+    margin-right: 1rem;
+}
+
+.mainCard_Statistics--life .lifeHeart{
+    width: 3rem;
+    filter: var(--shadow);
+    animation: hearthbeat 6s ease-in-out infinite;
+}
+
+
+@keyframes hearthbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+/* MAIN CARD GAME*/
+
+.mainCard_Game{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.mainCard_Game h1{
+    text-align: center;
+    font-family: var(--title);
+    font-size: 1.6rem;
+    margin: 2rem 0rem;
+    line-height: 2.5rem;
+}
+
+.mainCard_Game .wordAmount{
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.mainCard_Game .answer{
+    height: 5rem;
+    width: 80%;
+    padding: 2rem;
+    border: solid 0.1rem var(--turquoise);
+    border-radius: 1.8rem;
+    font-size: 3rem;
+    text-align: center;
+    font-family: var(--body);
+    letter-spacing: 0.5rem;
+    color: var(--turquoise);
+    font-weight: 600;
+    background: #ffffffa8;
+    margin-bottom: 2rem;
+}
+
+.mainCard_Game .answer::placeholder{
+    color: var(--turquoise);
+    opacity: 0.7;
+}
+
+.mainCard_Game .mainCard_Game--button, .resultCard--button{
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: var(--turquoise);
+    text-align: center;
+    border-radius: 1.8rem;
+    border-top: solid 0.3rem;
+    border-bottom: solid 0.5rem;
+    border-left: solid 0.8rem;
+    border-right: solid 0.4rem;
+    border-color: rgba(69, 238, 221, 0.842);
+    font-family: var(--title);
+    cursor: pointer;
+    width: fit-content;
+}
+
+.mainCard_Game .mainCard_Game--button:hover, .resultCard--button:hover{
+    border-color: rgb(98, 252, 236);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.mainCard_Game .mainCard_Game--button:active, .resultCard--button:active{
+    transform: scale(1);
+    border-color: var(--blueSky);
+    transition: 0.2s;
+}
+
+.mainCard_Game--hint{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 2rem;
+    background-color: var(--blueSky);
+    padding: 1rem;
+    font-size: 1.7rem;
+    border-radius: 1.8rem;
+}
+
+.mainCard_Game--hint .mainCard_Game--hint_p{
+    margin: 1rem auto;
+    font-weight: 600;
+    text-align: center;
+}
+
+/*RESULT CAR*/
+
+.resultCard{
+    position: absolute;
+    width: 70%;
+    z-index: 10;
+    padding: 2rem;
+    border-radius: 1.8rem;
+    filter: var(--shadow);
+    background-color: var(--greenLime);
+    display: none;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.resultCard--Title{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.resultCard--Close{
+    height: 2rem;
+    position: absolute;
+    right: 1%;
+    top: 10%;
+    cursor: pointer;
+}
+
+.resultCard--Close:hover{
+    transform: scale(0.8);
+    background-color: var(--turquoise);
+    border-radius: 50%;
+    border: solid 0.2rem;
+    border-color: rgb(98, 252, 236);
+}
+
+.resultCard--Close:active{
+    transform: scale(0.9);
+}
+
+.resultCard--Score{
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.resultCard--Score .resultCard_scoreCounter{
+    font-weight: 800;
+    margin-left: 1rem;
+    filter: var(--shadow);
+}
+
+.mainCard_reload{
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    right: 3%;
+    bottom: 4%;
+    cursor: pointer;
+}
+
+.mainCard_reload--icon{
+    width: 3rem;
+} 
+
+.mainCard_reload--text{
+    margin-right: 1rem;
+    background-color: var(--blueSky);
+    padding: 0.5rem;
+    border-radius: 1.8rem;
+    display: none;
+    font-size: 1.2rem;
+}
+
+.mainCard_reload:hover{
+    transform: scale(1.1);
+}
+
+.mainCard_reload:hover .mainCard_reload--text{
+    display: flex;
+}
+
+.mainCard_reload:active{
+    transform: scale(0.9);
+}
+
+.mainCard_reload:active .mainCard_reload--text{
+    display: none;
+}
+
+.creditBackground{
+    text-align: center;
+    margin: 1rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    background-color: var(--greenApple);
+    padding: 0.5rem;
+    border-radius: 1.8rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 800px) {
+    .mainCard{
+        width: 90%;
+    }
+
+    .mainCard_Game .answer{
+        font-size: 2.5rem;
+    }
+
+    .resultCard{
+        width: 95%;
+    }
+}

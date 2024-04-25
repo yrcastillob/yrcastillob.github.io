@@ -1,0 +1,230 @@
+:root{
+    --bluedeep:  #010C0E;
+    --blue: #132226;
+    --grayBlue: #525b56 ;
+    --beige: #be9063;
+    --bluelight: #a4978e;
+    --white: rgb(233, 250, 255);
+    --purple: #9370DB;
+    --green: #98FB98
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1.0rem;
+    background-color: var(--bluedeep);
+    color: var(--white);
+    font-family: "Anek Devanagari", sans-serif;
+}
+
+/* MAIN BOX */
+
+.EncrypterBox{
+    width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    flex-flow: column;
+}
+
+/* LANGUAGE SECTION */
+
+.EncrypterBox_language{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    align-self: flex-end;
+}
+
+.EncrypterBox_language:hover{
+    background-color: #2d535f2f;
+    border-radius: 0.4rem;
+    transition: 0.3s;
+}
+
+.EncrypterBox_language div{
+    height: 2.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.EncrypterBox_language div:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+    filter: drop-shadow(rgb(118, 192, 241) 0rem 0rem 0.1rem);
+}
+
+.EncrypterBox_language div:active{
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+
+.EncrypterBox_language div img{
+    width: 2rem;
+    margin: 0 0.3rem;
+}
+
+/* INSTRUCTIONS */
+
+.EncrypterBox_content-instructions{
+    background-color: #2d535f2f;
+    border-radius: 0.4rem;
+    padding: 1REM;
+}
+
+.EncrypterBox_content-instructions p strong{
+    color: var(--green);
+}
+/* MASTER TABLE SELECTION */
+
+.EncrypterBox_content-input__masterTable{
+    display: flex;
+    flex-flow: row wrap;
+    width: fit-content;
+    padding: 0.4rem;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
+.EncrypterBox_content-input__masterTable div{
+    background-color: var(--white);
+    min-width: 5rem;
+    color: var(--bluedeep);
+    text-align: center;
+    padding: 0.6rem;
+    margin: 1rem 1rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.EncrypterBox_content-input__masterTable:hover{
+    background-color: #2d535f2f;
+    border-radius: 0.4rem;
+    transition: 0.3s;
+}
+
+.EncrypterBox_content-input__masterTable div:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+    filter: drop-shadow(rgb(4, 7, 8) 0rem 0rem 0.1rem);
+    font-size: 1.3rem;
+}
+
+.EncrypterBox_content-input__masterTable div:active{
+    transform: scale(0.9);
+    transition: 0.2s;
+}
+
+/*  INPUT OPTION */
+
+.EncrypterBox_content-input__container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.EncrypterBox_content-input__option{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 30rem;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+
+.EncrypterBox_content-input__option textarea{
+    width: 100%;
+    min-height: 10rem;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    font-family: "Anek Devanagari", sans-serif;
+}
+
+/* BUTTONS */
+
+.EncrypterBox_content-input__containerButton{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+
+.EncrypterBox_content-input__button{
+    padding: 0.4rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 10rem;
+    text-align: center;
+}
+
+.buttonencrypt{
+    background-color: var(--green);
+    color: var(--bluedeep);
+}
+
+.buttondecrypt{
+    background-color: rgb(241, 54, 54);
+}
+
+
+/* RESULT SPACE */
+
+.EncrypterBox_content-input__result{
+    background-color: #2d535f2f;
+    border-radius: 0.4rem;
+    font-size: 1.3rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.EncrypterBox_content-input__result:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+.EncrypterBox_content-input__result:active{
+    transform: scale(0.96);
+    transition: 0.3s;
+}
+
+/* MESSAGES OPTION */
+
+.messageBox{
+    position: fixed;
+    top: 10%;
+    right: 3%;
+}
+
+.messageBox p {
+    margin: 1rem;
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+    font-weight: 500;
+}
+
+.messageBox .false{
+    background: rgb(241, 54, 54);
+}
+
+.messageBox .true{
+    background: var(--green);
+    color: var(--bluedeep);
+
+}
+
+.disclaimer{
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}

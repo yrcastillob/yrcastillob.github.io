@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/img/ico.svg" type="image/x-icon">
+    <title>StopWatch</title>
+</head>
+<body>
+
+    <main class="maincontainer">
+        
+        <div class="container_progressbar"> 
+            <div id="progressbar" class="progressbar">
+        </div>
+        
+
+        </div>
+
+        <div class="maincontainer_displaypanel">
+            
+            <div>
+                <input id="hours" type="number" placeholder="00"></input>:<input id="minutes" type="number" placeholder="00" max="60"></input>:<input id="seconds" type="number" placeholder="00" max="60"></input>
+            </div>
+
+        </div>
+
+        <div class="maincontainer_selectionmode">
+
+            <div id="stopwatchmode" onclick="assignModeType( 1 )" class="maincontainer_selectionmode--option"> 
+                <img src="./assets/img/stopwatch.svg" alt="stopwatch" >Stopwatch
+            </div>
+
+            <div id="timermode" onclick="assignModeType( 2 )" class="maincontainer_selectionmode--option"> 
+                <img src="./assets/img/timer.svg" alt="Timer">Timer
+            </div>
+
+        </div>
+
+        <div class="maincontainer_buttons">
+            <div id="startButton" class="maincontainer_buttons--option"></div>
+            <div id="resetButton" class="maincontainer_buttons--option"><img src="./assets/img/restart.svg" alt="Restart"></div>
+        </div>
+        
+    </main>
+
+    <div class="creditsBox">
+        <div class="creditsBox_content">
+            <p>Credits</p>
+            <p class="creditsBox_content--item">SVG Icons taken from <a href="https://www.svgrepo.com/collection/iconsax-line-oval-icons/">Iconsax Line Oval Icons Collection
+            </a></p>
+            <p class="creditsBox_content--item">Click sound taken from  <a href="https://freesound.org/people/Pixeliota/sounds/678248/?attribution=1">freesound.org</a></p>
+        </div>
+        <img src="./assets/img/info.svg" alt="Information" class="creditsBox--icon">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/img/ico.svg" type="image/x-icon">
+    <script defer src="./main.js"></script>
+    <title>Shuffle Cards</title>
+</head>
+<body>
+
+    <nav class="mainMenu">
+        <div class="mainMenu_Container">
+            <div class="mainMenu_Input">
+                <label for="playerNumber">Number of Players</label>
+                <input type="number" max="52" name="playerNumber" id="playerNumber" placeholder="Number">
+            </div>
+            
+            <div class="mainMenu_Input">
+                <label for="playerNumber">Cards per Player</label>
+                <input type="number" max="52" name="cardAmount" id="cardAmount" placeholder="Number">
+            </div>
+            
+    
+            <div class="mainMenu_Card ripple-btn" onclick="createRipple(event)" id="dealCardButton"> 
+                <p class="mainMenu_Card--cardSymbol"> ♠ ♥ </p> 
+                <p class="mainMenu_Card--cardSymbol"> ♦ ♣ </p> 
+                <p class="mainMenu_Card--cardTitle">Deal Cards</p>
+            </div>
+        </div> 
+    </nav>
+    <section class="messageBar" id="messageBar">
+    </section>
+
+    <section class="cardsSpace" id="cardsSpace">
+
+        
+    </section>
+
+    <p class="credits">Background image taken from <a href="https://pixabay.com/es/photos/tarjetas-juego-p%C3%B3ker-cima-4423526/">here</a></p>
+</body>
+</html>

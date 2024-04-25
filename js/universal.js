@@ -12,18 +12,19 @@ let language;
 
 // TechnologyNames
 const techonologyNames = {
-    py: "python",
+    py: "Python",
     js: "JavaScript",
     html:  "HTML",
     css: "CSS", 
     java: "Java",
-    bootstrap: "bootstrap",
-    express: "express",
-    mongo: "mongo",
-    php: "php",
-    sql: "sql"
+    bootstrap: "Bootstrap",
+    express: "Express",
+    mongo: "Mongo",
+    php: "PHP",
+    sql: "SQL",
+    typescript: "TypeScript"
 }
-
+let selectedTechnologiesFilter = [];
 
 // Managing Theme
 const indexCss = document.getElementById("stylesheet");
@@ -48,10 +49,10 @@ const htmlContent = {
             pt: "Projetos"
         },
         writings: {
-            es: "Escritos",
-            en: "Writings",
-            fr: "Écrits",
-            pt: "Escritos"
+            es: "Blog",
+            en: "Blog",
+            fr: "Blog",
+            pt: "Blog"
         }
     },
     contactMeIcon: {
@@ -101,7 +102,31 @@ const htmlContent = {
         </ul>
         <p class="welcomemessage--title">Selecione uma opção na barra inferior para mais informações sobre mim.</p>
         `
-    }
+    },
+    filterInstructions:{
+        es: "Selecciona una o varias tecnologías de la lista superior. Los proyectos que se mostrarán estarán basados en todas las tecnologías seleccionadas.",
+        en: "Select one or more technologies from the list above. The projects displayed will be based on all the selected technologies.",
+        fr: "Sélectionnez une ou plusieurs technologies de la liste ci-dessus. Les projets affichés seront basés sur toutes les technologies sélectionnées.",
+        pt: "Selecione uma ou várias tecnologias da lista acima. Os projetos exibidos serão baseados em todas as tecnologias selecionadas."
+    },
+    noResult:{
+        es: "No se encontraron resultados.",
+        en: "No results found.",
+        fr: "Aucun résultat trouvé.",
+        pt: "Nenhum resultado encontrado."
+    },
+    projectsTitle:{
+        es: "Proyectos",
+        en: "Projects",
+        fr: "Projets",
+        pt: "Projetos"
+    },
+    projectsIntructions:{
+        es: "Por favor, seleccione las tecnologías: ",
+        en: "Please select the technologies:",
+        fr: "Veuillez sélectionner les technologies :",
+        pt: "Por favor, selecione as tecnologias:"
+    },
 }
 
 // Interactive CV
@@ -598,13 +623,12 @@ const questionsInteractiveCV = {
 }
 
 /*Projects */
-
 const projectsDatabase = {
     one: {
         techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
         git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/encrtypting_messages",
-        web: "",
-        icon: "",
+        web: "../projects/encrtypting_messages/index.html",
+        icon: "../projects/encrtypting_messages/assets/img/ico.svg",
         background: "https://i.ibb.co/DwTDqbP/encrypter.jpg",
         title: {
             es: 'Encriptador de mensajes',
@@ -622,8 +646,8 @@ const projectsDatabase = {
     two: {
         techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
         git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/cards_deck_shuffle",
-        web: "",
-        icon: "",
+        web: "../projects/cards_deck_shuffle/index.html",
+        icon: "../projects/cards_deck_shuffle/assets/img/ico.svg",
         background: "https://i.ibb.co/zRcpSzd/sufflecards.jpg",
         title: {
             es: 'Ejercicio de Barajar Cartas',
@@ -641,8 +665,8 @@ const projectsDatabase = {
     three: {
         techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
         git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/guess_the_word",
-        web: "",
-        icon: "",
+        web: "../projects/guess_the_word/index.html",
+        icon: "../projects/guess_the_word/assets/favicon.ico",
         background: "https://i.ibb.co/BTs9khS/guessword.jpg",
         title: {
             es: 'Adivina la palabra',
@@ -659,27 +683,27 @@ const projectsDatabase = {
     },
     four: {
         techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
-        git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/guess_the_word",
-        web: "",
-        icon: "",
-        background: "https://i.ibb.co/BTs9khS/guessword.jpg",
+        git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/stopwatch",
+        web: "../projects/stopwatch/index.html",
+        icon: "../projects/stopwatch/assets/img/ico.svg",
+        background: "https://i.ibb.co/qs3jksf/stopwatch.jpg",
         title: {
-            es: 'Adivina la palabra',
-            en: 'Guess the word game',
-            fr: 'Devinez le mot',
-            pt: 'Adivinhe a palavra'
+            es: 'Cronómetro',
+            en: 'Stopwatch',
+            fr: 'Chronomètre',
+            pt: 'Cronômetro '
         },
         description:  {
-            es: 'Adivina el concepto sobre los patrones de diseño.',
-            en: 'Guess the concept about design patterns.',
-            fr: 'Devinez le concept sur les schémas de conception.',
-            pt: 'Adivinhe o conceito sobre os padrões de design.'
+            es: 'Cronómetro y temporizador.',
+            en: 'Stopwatch and timer.',
+            fr: 'Chronomètre et minuteur.',
+            pt: 'Cronômetro e temporizador.'
         },
     },
     five: {
         techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js],
         git: "https://github.com/yrcastillob/Learning_JavaScript/tree/master/managing_book_stack",
-        web: "",
+        web: "../projects/managing_book_stack/index.html",
         icon: "",
         background: "https://i.ibb.co/NmrZgFT/managebookstack.jpg",
         title: {
@@ -695,7 +719,47 @@ const projectsDatabase = {
             pt: 'Exercício para gerenciar pilhas de livros com arrays.'
         },
     },
+    six: {
+        techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.js,techonologyNames.php,techonologyNames.sql],
+        git: "https://github.com/yrcastillob/Page_Animal_Adoption",
+        web: "",
+        icon: "",
+        background: "https://i.ibb.co/xCSN7HD/animaladoption.jpg",
+        title: {
+            es: 'Página adopción animales',
+            en: 'Pet Adoption Webpage',
+            fr: "Site Web d'adoption d'animaux",
+            pt: 'Site da Web de adoção de animais de estimação'
+        },
+        description:  {
+            es: 'App web utilizando php para adoptar animales.',
+            en: 'Web app using PHP for pet adoption.',
+            fr: "Application Web utilisant PHP pour l'adoption d'animaux.",
+            pt: 'Aplicativo Web usando PHP para adoção de animais.'
+        },
+    },
+    seven: {
+        techonology: [techonologyNames.html,techonologyNames.css,techonologyNames.mongo,techonologyNames.express, techonologyNames.typescript],
+        git: "",
+        web: "https://youtu.be/CArMMQKSSZ4",
+        icon: "../images/index/ico/ampliamente.ico",
+        background: "https://i.ibb.co/xqHrdPn/ampliamente.jpg",
+        title: {
+            es: 'Ampliamente',
+            en: 'Expand-Mind',
+            fr: "Expand-Mind",
+            pt: 'Expand-Mind'
+        },
+        description:  {
+            es: 'Aplicación MEAN para aprender con microlecciones.',
+            en: 'MEAN application for learning with micro-lessons.',
+            fr: "Application MEAN pour apprendre avec des micro-leçons.",
+            pt: 'Aplicação MEAN para aprender com microaulas.'
+        },
+    },
 }
+
+/*Writings Variable*/
 
 /*Pair of content*/
 
@@ -711,7 +775,11 @@ const pairingHtmlContent = [
     ["experiencebutton",responsesInteractiveCV.workExperience.title],
     ["languagebutton",responsesInteractiveCV.languages.title],
     ["skillsbutton",responsesInteractiveCV.skills.title],
+    ["projectsFilter",htmlContent.projectsTitle],
+    ["projectsFilterMessage",htmlContent.projectsIntructions],
 ];
+
+
 
 
 /*************************** COOKIES ***************************/
@@ -928,6 +996,14 @@ function initialSetting(){
     insertLanguageWebHtmlElements( pairingHtmlContent );
     changeImageLangue ( "navlanguageimage" );
     scrollDownChat()
+    
+    filterButtons( projectsDatabase ) 
+    const mainContainer = document.getElementById("projetscards");
+    const instructionparragrapht = document.createElement("p");
+    instructionparragrapht.classList.add("projetsContainer_projetscards--instructions");
+    instructionparragrapht.innerHTML = getInnerText( htmlContent.filterInstructions )
+    mainContainer.innerHTML = "";
+    mainContainer.append(instructionparragrapht)   
 }
 
 function display(id,typeDisplay){
@@ -959,7 +1035,201 @@ function changeTheme(){
     }
 }
 
-/*  */
+/********* FUNCITONS ABOUT PROJECTS *****************/
+
+function getInnerText( object ){
+    /*Function to create string message in the chat element.
+    Params:
+    object = Object that contains the data to be retrieved.
+    */
+    language = getCookie( languageName );
+    let innerContent = "";
+    switch ( language ){
+        case es:
+            innerContent = object.es;
+            break;
+        case en:
+            innerContent = object.en;
+            break;
+        case fr:
+            innerContent = object.fr;
+            break;
+        case pt:
+            innerContent = object.pt;
+            break;
+    }
+    return innerContent;
+}
+
+
+function createProjectCard( cardObject ){
+    /*
+    Function to create a project card:
+    Params:
+    • cardObject: object that contains the project, each project must have attributes: techonology, git,
+    web, icon, background, title, description.
+    */
+    const maindiv = document.createElement("div");
+    maindiv.classList.add("projetsContainer_item");
+
+    //Background image
+    const backgroundiv = document.createElement("div");
+    backgroundiv.classList.add("projetsContainer_item--background");
+
+    const backimg = document.createElement("img");
+    backimg.src =  cardObject.background;
+    console.log(cardObject.background)
+    backgroundiv.appendChild(backimg);
+    const overlay = document.createElement("div");
+    overlay.classList.add("projetsContainer_item--background--overlay");
+    backgroundiv.appendChild(overlay);
+
+    //Project description container
+    const descriptiondiv =  document.createElement("div");
+    descriptiondiv.classList.add("projetsContainer_item--description");
+
+    const descriptiontitle = document.createElement("p");
+    descriptiontitle.classList.add("projetsContainer_item--description--title");
+    descriptiontitle.innerHTML = getInnerText( cardObject.title );
+
+    const techonologylist = document.createElement("ul");
+    techonologylist.classList.add("projetsContainer_item--description--technology");
+    cardObject.techonology.forEach(element => {
+        const listitem = document.createElement("li");
+        listitem.innerHTML = element;
+        techonologylist.appendChild(listitem);
+    });
+
+    const descriptiontext = document.createElement("p");
+    descriptiontext.classList.add("projetsContainer_item--description--text");
+    descriptiontext.innerHTML = getInnerText( cardObject.description );
+
+    descriptiondiv.appendChild(descriptiontitle);
+    descriptiondiv.appendChild(techonologylist);
+    descriptiondiv.appendChild(descriptiontext);
+
+    //Links container
+    const linkscontainer = document.createElement("div");
+    linkscontainer.classList.add("projetsContainer_item--links");
+
+    if (cardObject.web !== ""){
+        const weblink = document.createElement("a");
+        weblink.classList.add("projetsContainer_item--linkpage");
+        weblink.href = cardObject.web;
+        const imageweb = document.createElement("img");
+        if (cardObject.icon === ""){
+            imageweb.src = "../images/index/ico/defaultico.svg";
+        } else{
+            imageweb.src = cardObject.icon;
+        }
+        console.log(imageweb.src)
+        imageweb.alt = "Web icon"
+        weblink.appendChild(imageweb);
+        linkscontainer.appendChild(weblink)
+    }
+
+    if (cardObject.git !== ""){
+        const gitlink = document.createElement("a");
+        gitlink.classList.add("projetsContainer_item--github");
+        gitlink.href = cardObject.git;
+        gitlink.target = "_blank"
+        const imagegit = document.createElement("img");
+        imagegit.src = "../images/index/github.svg";
+        imagegit.alt = "Github icon"
+        gitlink.appendChild(imagegit);
+        linkscontainer.appendChild(gitlink)
+    }
+    maindiv.appendChild(backgroundiv);
+    maindiv.appendChild(descriptiondiv);
+    maindiv.appendChild(linkscontainer);
+
+    return maindiv;
+}
+
+function insertProjectCard( cardContainer ){
+    /*Function to insert a card created into the correct div container.
+    Params:
+    • cardContainer = HTML div element that has all the elements and classes for the card.
+    */
+    const mainContainer = document.getElementById("projetscards");
+    mainContainer.append(cardContainer)
+}
+
+function filterButtons( projectsObject ){
+    /*
+    Function to create filter buttons
+    Params:
+    • projectsObject: object wiht the projects, it mus have the propery thecnology and it must be an array.
+    */
+    let technologyStack = [];
+    for (let project in projectsObject){
+        projectsObject[project].techonology.forEach(element => {
+            if(!technologyStack.includes(element.toLocaleLowerCase())){
+                technologyStack.push(element.toLocaleLowerCase())
+            }
+        });
+    } 
+    const filterImgContainer = document.getElementById("filterprojectoptions");
+    technologyStack.forEach(element => {
+        const imgTechnology = document.createElement("img");
+        imgTechnology.src = `../images/index/programminglanguages/${element}.svg`;
+        imgTechnology.alt = `${element}`;
+        imgTechnology.id = `${element}id`;
+        imgTechnology.onclick = function() {
+            selectAndFilterTechnology(`${element}`,`${element}id`,projectsDatabase); 
+          };
+        filterImgContainer.appendChild(imgTechnology)
+    });
+    console.log(technologyStack)
+}
+
+
+function selectAndFilterTechnology( technologyName,technologyHtmlId,projectsObject ){
+    /*Filter to select technology. It only retrieves the elements that has all the selected.
+    Params;
+    • TechnologyName: string of the technology to be used.
+    • technologyHtmlId: ID of the element.
+    • projectsObject: object with the projects
+    */
+    const imgTechnology = document.getElementById(technologyHtmlId);
+    imgTechnology.classList.toggle("projetsContainer_filter--options--selected");
+
+    if(!selectedTechnologiesFilter.includes(technologyName.toLocaleLowerCase())){
+        selectedTechnologiesFilter.push(technologyName.toLocaleLowerCase());
+    }else{
+        index = selectedTechnologiesFilter.indexOf(technologyName.toLocaleLowerCase());
+        selectedTechnologiesFilter.splice(index,1);
+    }
+    if(selectedTechnologiesFilter.length>0){
+        let arrayCorrect = [];
+        for (let project in projectsObject){
+            let technolgiesPresent = projectsObject[project].techonology.map(tech => tech.toLocaleLowerCase());
+            if (selectedTechnologiesFilter.every(tech => technolgiesPresent.includes(tech))) {
+                arrayCorrect.push(projectsObject[project]);
+            }
+        }
+        const mainContainer = document.getElementById("projetscards");
+        mainContainer.innerHTML = "";
+        arrayCorrect.forEach(element => {
+            insertProjectCard( createProjectCard( element ) )
+        });
+        if(arrayCorrect.length == 0){
+            const instructionparragrapht = document.createElement("p");
+            instructionparragrapht.classList.add("projetsContainer_projetscards--instructions");
+            instructionparragrapht.innerHTML = getInnerText( htmlContent.noResult )
+            mainContainer.append(instructionparragrapht)
+        }
+    } else{
+        const mainContainer = document.getElementById("projetscards");
+        const instructionparragrapht = document.createElement("p");
+        instructionparragrapht.classList.add("projetsContainer_projetscards--instructions");
+        instructionparragrapht.innerHTML = getInnerText( htmlContent.filterInstructions )
+        mainContainer.innerHTML = "";
+        mainContainer.append(instructionparragrapht)
+    }
+    
+    
+}
 
 /***************************** CHAT FUNCTIONS ******************************/
 

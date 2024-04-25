@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="main.js"></script>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Guess The Word</title>
+</head>
+<body>
+
+    <main>
+        <div class="mainCard">
+            <div class="mainCard_Statistics">
+                <div class="mainCard_Statistics--score">
+                    <p>Score: <span id="scoreCounter"></span></p>
+                </div>
+                <div class="mainCard_Statistics--life">
+                    <p>Lifes:</p><div id="lifesCounter"></div>
+                </div>
+            </div>
+            <div class="mainCard_Game">
+                <h1>Guess the Concept About Design Patterns</h1>
+                <p id="wordAmount" class="wordAmount"></p>
+                <div id="hintText" class="mainCard_Game--hint"></div>
+                <input type="text" class="answer" id="answer" placeholder="Answer Here">
+                <div class="mainCard_Game--button" id="checkButton"> Check! </div>
+                
+            </div>
+            <div class="mainCard_reload" id="mainCard_reload">
+                <p class="mainCard_reload--text">Restart game</p>
+                <img src="./assets/reload.svg" alt="Restart Round" title="Restart Round" class="mainCard_reload--icon">
+            </div>
+        </div>
+
+        <div class="resultCard" id="resultCard">
+            <img src="./assets/close.svg" alt="close" class="resultCard--Close" id="resultCard--Close">
+            <h2 id="resultCard--Title" class="resultCard--Title"></h2>
+            <p class="resultCard--Score"> Total Score: <span id="resultCard_scoreCounter" class="resultCard_scoreCounter"></span></p>
+            <div class="resultCard--button" id="playButton">Play Again!</div>
+        </div>
+        <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/" class="creditBackground">Background pattern from: Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
+    </main>
+    
+</body>
+</html>

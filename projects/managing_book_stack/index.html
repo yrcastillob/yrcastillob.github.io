@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="js/materialize.min.js" defer></script>
+    <script defer src="./main.js"></script>
+    <title>Managing Book Stack</title>
+</head>
+<body>
+    <nav class="nav-extended teal accent-4">
+        <div class="nav-content center-align">
+            <span class="nav-title">Manage the Book Stack </span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row collection">
+            <h2> Add the Book Information </h2>
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                    <input id="book_title" type="text" class="validate">
+                    <label for="book_title">Title</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">Title must be unique.</span>
+                  </div>
+                <div class="input-field col s6">
+                  <input id="book_year" type="number" class="validate">
+                  <label for="book_year">Publishing Year</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                    <input id="book_editorial" type="text" class="validate">
+                    <label for="book_editorial">Editorial</label>
+                  </div>
+                <div class="input-field col s6">
+                  <input id="book_author" type="text" class="validate">
+                  <label for="book_author">Author</label>
+                </div>
+              </div>
+              <a class="waves-effect waves-light btn teal darken-1" id="buttonAddLast">Add as Last</a>
+              <a class="waves-effect waves-light btn teal darken-1" id="buttonAddFist">Add as First</a>
+
+            </form>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                  <th>Title</th>
+                  <th>Year</th>
+                  <th>Editorial</th>
+                  <th>Author</th>
+                  <th></th>
+              </tr>
+            </thead>
+    
+            <tbody id="booksStack">
+            </tbody>
+
+          </table>
+    </div>
+    <div id="messagesBox" class="messagesBox">
+
+    </div>
+    
+</body>
+</html>

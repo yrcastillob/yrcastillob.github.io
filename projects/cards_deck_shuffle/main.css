@@ -1,0 +1,260 @@
+/**************************UNIVERSAL*****************************/
+:root{
+    --primary: #404040;
+    --lila: #B088A3;
+    --purple: #5C3B6E;
+    --lightGray: #D9D9D9;
+    --pinkBaby: #E6B0D9;
+    --green: #7F9A82;
+    --blueGray: #7991A1;
+    --lightBrown: #BFA67E;
+    --clasicGolden: #ffd700;
+    --ambar: #ffbf00;
+    --goldenRose: #ffbb86;
+    --champange: #ffecb3;
+    --bronce: #cd7f32;
+    --champangLight: #f5f5dc;
+    --marfil: #fff8e7;
+    --pearlChampagne: #eae0c8;
+    --honeyChampgange: #d3b590;
+    --oldWhite: #faebd7;
+    --blackmate: #1a1a1a;
+    --carbon: #202020;
+    --shadow: drop-shadow(0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.781));
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 1rem;
+    background-image: url('./assets/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    font-family: "Domine", serif;
+    flex: 1;
+}
+
+/**************************MAIN MENU*****************************/
+
+.mainMenu{
+    background: var(--goldenRose);
+    filter: var(--shadow);
+    background-image: url('./assets/img/texture.svg');
+    background-size: 70rem;
+    background-position: 50%;
+    background-repeat: repeat;
+}
+
+.mainMenu .mainMenu_Container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainMenu_Card, .ripple-btn{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: var(--ambar);
+
+    height: 100px;
+    max-height: 100px;
+    min-width: 70px;
+    max-width: 70px;
+    margin: 0.5rem;
+    border-radius: 0.1rem;
+    filter: var(--shadow);
+    cursor: pointer;
+    padding: 0.5rem;
+    overflow: hidden;
+}
+
+.mainMenu_Card .mainMenu_Card--cardSymbol{
+    font-size: 1.4rem;
+}
+
+.mainMenu_Card .mainMenu_Card--cardTitle{
+    font-size: 0.8rem;
+}
+
+.mainMenu_Card:hover{
+    transform:scale(1.05);
+    transition: 0.3s
+}
+
+.mainMenu_Card:active{
+    transform:scale(1);
+    background-color: var(--clasicGolden);
+}
+
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple-animation 0.8s linear;
+}
+  
+@keyframes ripple-animation {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+.mainMenu_Input {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-right: 1rem;
+}
+
+
+.mainMenu_Input input {
+    font-family:  "Domine", serif;
+    margin-top: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    padding: 0.5rem;
+}
+
+
+.mainMenu_Input label{
+    position: absolute;
+    bottom: 55%;
+    font-size: 0.8rem;
+    background-color: white;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    transition: 0.5s;
+}
+
+/***************************************CARDS SPACE*****************************************/
+
+.cardsSpace{
+    width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.playerDeck{
+    display: flex;
+    flex-flow: row;
+    margin: 1rem;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    background-color: var(--champange);
+    filter: var(--shadow);
+}
+
+.playerDeck .playerDeck--title{
+    min-width: 8rem;
+    max-width: 8rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PlayerDeck--cardBucket {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1;
+    justify-content: baseline;
+}
+
+.PlayerDeck--cardBucket .PlayerDeck--cardBucket--Card{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    height: 100px;
+    width: 70px;
+    margin: 0.5rem;
+    border-radius: 0.1rem;
+    filter: var(--shadow);
+    cursor: pointer;
+    padding: 0.5rem;
+    overflow: hidden;
+    background-color: var(--marfil);
+}
+
+.PlayerDeck--cardBucket .PlayerDeck--cardBucket--Card:hover{
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+.PlayerDeck--cardBucket .PlayerDeck--cardBucket--Card p:nth-child(2){
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.PlayerDeck--cardBucket .PlayerDeck--cardBucket--Card p:nth-child(3){
+    text-align: right;
+}
+
+.redCard{
+    color: rgb(175, 16, 16);
+}
+
+.blackCard{
+    color: var(--blackmate);
+}
+
+/****************************************MESSAGES SECTION****************************************************/
+.messageBar{
+    width: 100%;
+    z-index: 12;
+    position: fixed;
+}
+
+.errorMessage{
+    background-color: rgb(175, 16, 16);
+    padding: 0.5rem;
+    color: var(--marfil);
+    animation: messagesAnimation 0.4s ease-in 1;
+    width: 100%;
+}
+
+.successMessage{
+    background-color: rgb(66, 175, 16);
+    padding: 0.5rem;
+    color: var(--marfil);
+    animation: messagesAnimation 0.34s ease-in 1;
+    width: 100%;
+}
+
+@keyframes messagesAnimation{
+   from {
+    opacity: 0;
+   }
+   to{
+    opacity: 1;
+   }
+}
+
+.credits{
+    background-color: var(--oldWhite);
+    width: fit-content;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 0.3rem;
+}

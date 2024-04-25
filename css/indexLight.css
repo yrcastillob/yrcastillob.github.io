@@ -47,16 +47,6 @@ body{
     font-size: 1.6rem;
 }
 
-html{
-    scroll-snap-type: y proximity; 
-    scroll-padding-top: 5rem;
-}
-
-.section{
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-
 /********************NAVBAR*********************/
 
 header{
@@ -591,7 +581,7 @@ div#welcomemessage ul li{
 /********************* PROJECTS SECTION *********************/
 
 .projetsContainer{
-    min-height: 100vh;
+    min-height: 90vh;
     width: 100%;
     margin: 0 auto;
 }
@@ -684,12 +674,10 @@ div#welcomemessage ul li{
     position: relative;
     overflow: hidden;
     padding: 3rem;
-    filter:grayscale(100%);
     transition: 0.3s;
 }
 
 .projetsContainer_item:hover{
-    filter: grayscale(0%);
     height: 26rem;
     transition: 0.3s;
 }
@@ -702,6 +690,7 @@ div#welcomemessage ul li{
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    background-color: var(--babypowder);
 }
 
 .projetsContainer_item--background img {
@@ -709,6 +698,22 @@ div#welcomemessage ul li{
     height: 100%;
     object-fit:cover;
 }
+
+.projetsContainer_item:hover .projetsContainer_item--background--overlay {
+    background-color: rgba(240, 248, 255, 0.753);
+}
+
+.projetsContainer_item--background--overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(240, 248, 255, 0.87);
+    z-index: 1; 
+}
+
+
 .projetsContainer_item--links{
     display: flex;
     flex-flow: row nowrap;
@@ -718,7 +723,7 @@ div#welcomemessage ul li{
 
 .projetsContainer_item--links .projetsContainer_item--linkpage , .projetsContainer_item--links .projetsContainer_item--github {
     padding: 1rem;
-    background-color: rgba(240, 248, 255, 0.527);
+    background-color: rgb(70, 178, 250);
     border-radius: 1.3rem;
     margin: 1rem;
     filter: drop-shadow(var(--shadow));
@@ -742,7 +747,7 @@ div#welcomemessage ul li{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    background-color: rgba(240, 248, 255, 0.527);
+    background-color: rgb(70, 178, 250);
     filter: drop-shadow(var(--shadow));
     padding: 1rem;
     border-radius: 1.3rem;
@@ -765,23 +770,31 @@ div#welcomemessage ul li{
     display: flex;
     flex-flow: row wrap;
     list-style: none;
-    margin: 1rem 0;
-    max-height: 4rem;
+    margin: 1rem;
+    max-height: 10rem;
 }
 
 .projetsContainer_item--description--technology li{
     padding: 0.4rem 0.8rem;
-    margin: 0 1rem;
-    background-color: var(--black);
-    color: var(--grey);
+    margin: 0.4rem 1rem;
+    background-color: rgb(70, 178, 250);
+    border: solid 0.1rem rgba(0, 0, 0, 0.418);
     border-radius: 1.3rem;
 }
 
 .projetsContainer_item--description--text{
-    max-height: 4rem;
+    max-height: 5rem;
     white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.projetsContainer_projetscards--instructions{
+    text-align: center;
+    margin: 2rem auto;
+    width: 80%;
+    font-size: 2rem;
+    font-weight: bolder;
 }
 /********************* MEDIA QUERIES *********************/
 
@@ -879,5 +892,9 @@ div#welcomemessage ul li{
 
     .chatContainer_messages .messageEducation strong {
         border: none
+    }
+
+    .projetsContainer_item--description{
+        height: 25rem;
     }
   }

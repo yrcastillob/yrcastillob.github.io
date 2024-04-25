@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/ico.svg">
+    <script src="main.js" defer></script>
+    <title>Message Encrypter</title>
+</head>
+<body>
+    <div class="messageBox" id="messageBar">
+
+    </div>
+
+    <main class="EncrypterBox">
+        <div class="EncrypterBox_language">
+            <div onclick="selectLanguage( 'en' )"><img src="./assets/img/usa.svg" alt="USA flag"></div>
+            <div onclick="selectLanguage( 'es' )"><img src="./assets/img/colombia.svg" alt="Colombia flag"></div>
+            <div onclick="selectLanguage( 'fr' )"><img src="./assets/img/france.svg" alt="France flag"></div>
+            <div onclick="selectLanguage( 'pt' )"><img src="./assets/img/brazil.svg" alt="Brazil flag"></div>
+        </div>
+        <div class="EncrypterBox_content">
+            <h1 id="maintitle"></h1>
+            <div class="EncrypterBox_content-instructions">
+                <h2 id="instructionstitle"></h2>
+                <p id="instructionscontent"></p>
+            </div>
+            <div class="EncrypterBox_content-input">
+                <h2 id="mastertable"></h2>
+                <div class="EncrypterBox_content-input__masterTable">
+                    <div onclick="asingMasterTable( '1' )">1</div>
+                    <div onclick="asingMasterTable( '2' )">2</div>
+                    <div onclick="asingMasterTable( '3' )">3</div>
+                    <div onclick="asingMasterTable( '4' )">4</div>
+                </div>
+
+                <div class="EncrypterBox_content-input__container">
+
+                    <div class="EncrypterBox_content-input__option">
+                        <h2 id="keylabel"></h2>
+                        <textarea type="text" name="keyword" id="keyword"></textarea>
+                        <div class="EncrypterBox_content-input__feedback" id="keywordfeedback"></div>
+                    </div>
+
+                    <div class="EncrypterBox_content-input__option">
+                        <h2 id="messagelabel"></h2>
+                        <textarea type="text" name="keymessage" id="keymessage"></textarea>
+                        <div class="EncrypterBox_content-input__feedback" id="keymessagefeedback"></div>
+                    </div>
+
+                </div>
+                
+                <div class="EncrypterBox_content-input__containerButton">
+
+                    <div class="EncrypterBox_content-input__button buttonencrypt" id="buttonencrypt"></div>
+                    <div class="EncrypterBox_content-input__button buttondecrypt" id="buttondecrypt"></div>
+
+                </div>
+                <h2 id="resulttitle"></h2>
+                <div class="EncrypterBox_content-input__result" id="encryptedmessage">
+
+                </div>
+
+            </div>
+        </div>
+        <p id="disclaimer" class="disclaimer"></p>
+    </main>
+
+</body>
+</html>
