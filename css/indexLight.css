@@ -584,6 +584,7 @@ div#welcomemessage ul li{
     min-height: 90vh;
     width: 100%;
     margin: 0 auto;
+    padding-top: 10vh;
 }
 
 .projetsContainer_filter--title{
@@ -795,7 +796,24 @@ div#welcomemessage ul li{
     width: 80%;
     font-size: 2rem;
     font-weight: bolder;
+    margin-top: 10rem;
 }
+
+/********************* BLOGS SECTION *********************/
+.blogContainer{
+    min-height: 85vh;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 10vh;
+}
+
+.blogContainer h2{
+    margin-left: 1rem;
+    font-size: 3rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
 /********************* MEDIA QUERIES *********************/
 
 @media screen and (max-width: 1007px) {

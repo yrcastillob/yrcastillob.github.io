@@ -127,6 +127,12 @@ const htmlContent = {
         fr: "Veuillez sélectionner les technologies :",
         pt: "Por favor, selecione as tecnologias:"
     },
+    blogIntructions: {
+        es: "Por favor seleccione el idioma de filtro: ",
+        en: "Please select the filter language:",
+        fr: "Veuillez sélectionner la langue du filtre :",
+        pt: "Por favor, selecione o idioma do filtro:"
+    },
 }
 
 // Interactive CV
@@ -777,6 +783,7 @@ const pairingHtmlContent = [
     ["skillsbutton",responsesInteractiveCV.skills.title],
     ["projectsFilter",htmlContent.projectsTitle],
     ["projectsFilterMessage",htmlContent.projectsIntructions],
+    ["blogsFilterMessage",htmlContent.blogIntructions]
 ];
 
 
