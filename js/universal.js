@@ -1005,12 +1005,10 @@ function initialSetting(){
     scrollDownChat()
     
     filterButtons( projectsDatabase ) 
-    const mainContainer = document.getElementById("projetscards");
-    const instructionparragrapht = document.createElement("p");
-    instructionparragrapht.classList.add("projetsContainer_projetscards--instructions");
-    instructionparragrapht.innerHTML = getInnerText( htmlContent.filterInstructions )
-    mainContainer.innerHTML = "";
-    mainContainer.append(instructionparragrapht)   
+
+    for (let project in projectsDatabase){
+        insertProjectCard( createProjectCard( projectsDatabase[project] ) )
+    }
 }
 
 function display(id,typeDisplay){
@@ -1207,35 +1205,26 @@ function selectAndFilterTechnology( technologyName,technologyHtmlId,projectsObje
         index = selectedTechnologiesFilter.indexOf(technologyName.toLocaleLowerCase());
         selectedTechnologiesFilter.splice(index,1);
     }
-    if(selectedTechnologiesFilter.length>0){
-        let arrayCorrect = [];
+
+    let arrayCorrect = [];
         for (let project in projectsObject){
             let technolgiesPresent = projectsObject[project].techonology.map(tech => tech.toLocaleLowerCase());
             if (selectedTechnologiesFilter.every(tech => technolgiesPresent.includes(tech))) {
                 arrayCorrect.push(projectsObject[project]);
             }
         }
-        const mainContainer = document.getElementById("projetscards");
-        mainContainer.innerHTML = "";
-        arrayCorrect.forEach(element => {
-            insertProjectCard( createProjectCard( element ) )
-        });
-        if(arrayCorrect.length == 0){
-            const instructionparragrapht = document.createElement("p");
-            instructionparragrapht.classList.add("projetsContainer_projetscards--instructions");
-            instructionparragrapht.innerHTML = getInnerText( htmlContent.noResult )
-            mainContainer.append(instructionparragrapht)
-        }
-    } else{
-        const mainContainer = document.getElementById("projetscards");
+    const mainContainer = document.getElementById("projetscards");
+    mainContainer.innerHTML = "";
+    arrayCorrect.forEach(element => {
+        insertProjectCard( createProjectCard( element ) )
+    });
+    if(arrayCorrect.length == 0){
         const instructionparragrapht = document.createElement("p");
         instructionparragrapht.classList.add("projetsContainer_projetscards--instructions");
-        instructionparragrapht.innerHTML = getInnerText( htmlContent.filterInstructions )
-        mainContainer.innerHTML = "";
+        instructionparragrapht.innerHTML = getInnerText( htmlContent.noResult )
         mainContainer.append(instructionparragrapht)
     }
-    
-    
+
 }
 
 /***************************** CHAT FUNCTIONS ******************************/

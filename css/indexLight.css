@@ -58,7 +58,7 @@ header{
     align-content: center;
     padding: 0.5rem;
     border-bottom: rgba(61, 61, 61, 0.075) solid 0.1rem;
-    position: sticky;
+    position: fixed;
     top: 0%;
     background-color: var(--grey);
     z-index: 100;
@@ -281,11 +281,11 @@ header{
 
 .chatContainer{
     height: 90vh;
+    padding-top: 10vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0;
 }
 
 /*Contact information*/
@@ -804,7 +804,7 @@ div#welcomemessage ul li{
     min-height: 85vh;
     width: 100%;
     margin: 0 auto;
-    padding-top: 10vh;
+    padding-top: 3vh;
 }
 
 .blogContainer h2{
@@ -812,6 +812,124 @@ div#welcomemessage ul li{
     font-size: 3rem;
     width: 90%;
     margin: 0 auto;
+}
+
+.blogContainer_filter{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.blogContainer_filter--instruction{
+    font-size: 1.8rem;
+    font-weight: bolder;
+    min-width: 18rem;
+}
+.blogContainer_filter--options{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.blogContainer_filter--options img{
+    width: 3.5rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    filter: drop-shadow(var(--shadow));
+}
+
+.blogContainer_filter--options img:hover{
+    transform: scale(1.06);
+}
+
+.blogContainer_filter--options img:active{
+    transform: scale(1.03);
+}
+
+/* BLOG POST*/
+
+.blogContainer_cards{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 1rem;
+}
+
+.blogContainer_cards--post{
+    width: 49%;
+    padding: 1rem;
+    border: solid 0.1rem rgba(0, 0, 0, 0.418);
+    border-radius: 1.3rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-family: var(--title);
+    font-weight: bolder;
+    color: var(--black);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
+}
+
+.blogContainer_cards--postInfo{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.blogContainer_cards--postTitle{
+    margin-bottom: 1rem;
+}
+
+.blogContainer_cards--postInfo img{
+    height: 1.5rem;
+}
+
+
+.blogContainer_cards--postLink{
+    position: absolute;
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 100%;
+    background-color: var(--blue);
+    right: 0%;
+    border-radius: 0 1.3rem 1.3rem 0;
+    color: var(--grey);
+}
+
+.blogContainer_cards--postLink img{
+    width: 2rem;
+    filter: invert(95%);
+}
+
+.blogContainer_cards--post:hover{
+    background-color: var(--black);
+    transform: scale(1.06);
+    transition: 0.3s;
+}
+
+.blogContainer_cards--post:active{
+    background-color: var(--black);
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+.blogContainer_cards--post:hover .blogContainer_cards--postLink{
+    display: flex;
+}
+
+.blogContainer_cards--post:hover .blogContainer_cards--postInfo{
+    width: calc(100% - 6rem);
+    transition: 0.3s;
+    color: var(--grey);
 }
 
 /********************* MEDIA QUERIES *********************/
@@ -914,5 +1032,9 @@ div#welcomemessage ul li{
 
     .projetsContainer_item--description{
         height: 25rem;
+    }
+
+    .blogContainer_cards--post{
+        width: 98%;
     }
   }
