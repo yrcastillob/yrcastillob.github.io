@@ -862,6 +862,7 @@ div#welcomemessage ul li{
     width: 49%;
     padding: 1rem;
     border: solid 0.1rem rgba(0, 0, 0, 0.418);
+    filter: drop-shadow(var(--shadow));
     border-radius: 1.3rem;
     text-decoration: none;
     font-size: 1.8rem;
@@ -890,6 +891,10 @@ div#welcomemessage ul li{
     height: 1.5rem;
 }
 
+.selectedPostLanguage{
+    border: solid 0.2rem var(--black);
+    border-radius: 0.6rem;
+}
 
 .blogContainer_cards--postLink{
     position: absolute;
@@ -901,7 +906,7 @@ div#welcomemessage ul li{
     height: 100%;
     background-color: var(--blue);
     right: 0%;
-    border-radius: 0 1.3rem 1.3rem 0;
+    border-radius: 0 1.2rem 1.2rem 0;
     color: var(--grey);
 }
 
@@ -930,6 +935,114 @@ div#welcomemessage ul li{
     width: calc(100% - 6rem);
     transition: 0.3s;
     color: var(--grey);
+}
+
+/*********************** CONTACT CONTAINER ***********************/
+.contactContainer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 111;
+    background-color: var(--grey);
+    width: 80vw;
+    min-height: fit-content;
+    padding: 1rem;
+    border-radius: 1.3rem;
+    border: solid 0.1rem rgba(0, 0, 0, 0.164);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
+
+.contactContainer_closeimg{
+    height: 2rem;
+    filter: invert(100%);
+    position: absolute;
+    top: 3%;
+    right: 1%;
+    cursor: pointer;
+}
+
+.contactContainer_closeimg:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.contactContainer_closeimg:active{
+    transform: scale(1);
+    transition: 0.2s;
+}
+
+.contactContainer h2{
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+.contactContainer_item{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.contactContainer_item label{
+    width: 10rem;
+    font-weight: bolder;
+}
+
+.contactContainer_item input, .contactContainer_item textarea{
+    width: calc(100% - 10rem);
+    max-width: calc(100% - 10rem);
+    padding: 1rem;
+    font-size: 1.4rem;
+    border-radius: 1.3rem;
+    border: solid 0.1rem rgba(0, 0, 0, 0.164);
+}
+
+.contactContainer_item textarea{
+    min-height: 8rem;
+    max-height: 10rem;
+    margin-bottom: 4rem;
+}
+
+.contactContainer_button{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: var(--black);
+    border-radius: 0 0 1.2rem 1.2rem;
+    cursor: pointer;
+    color: var(--grey);
+    font-size: 2rem;
+}
+
+.contactContainer_button img{
+    width: 2.5rem;
+    filter: invert(100%);
+    margin-left: 1rem;
+}
+
+.contactContainer_button:hover{
+    background-color: var(--blue);
+    transition: 0.3s;
+}
+
+.contactContainer_button:hover p, .contactContainer_button:hover img {
+    transform: scale(1.08);
+    transition: 0.3s;
+}
+
+.contactContainer_button:active p, .contactContainer_button:active img{
+    transform: scale(1);
+    transition: 0.2s;
 }
 
 /********************* MEDIA QUERIES *********************/

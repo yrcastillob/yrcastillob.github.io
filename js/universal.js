@@ -765,7 +765,22 @@ const projectsDatabase = {
     },
 }
 
-/*Writings Variable*/
+/*Blog Variables*/
+
+const blogDatabase = {
+    article:{
+        title:"Análisis de la muerte de Iván Ilich",
+        language: es,
+        link: "https://medium.com/@yrcastillob/an%C3%A1lisis-de-la-muerte-de-iv%C3%A1n-ilich-ef27f8dfc482"
+    },
+    article2:{
+        title:"Conceptos básicos sobre bases de datos",
+        language: es,
+        link: "https://medium.com/@yrcastillob/conceptos-b%C3%A1sicos-sobre-bases-de-datos-f8cf09a2b88f"
+    }
+}
+let selectedBlogLanguage = [];
+
 
 /*Pair of content*/
 
@@ -969,76 +984,7 @@ function changeImageLangue ( idImageHtml ){
     }
 }
 
-/***************************FUNCTION TO SET INITIAL SETTINGS***************************/
 
-function initialSetting(){
-    /*Function that does the initial setting of the webpage keeping in mind if it exist or not a cookie*/
-    theme = getCookie(themeName);
-
-    if( theme === null || theme === "" || theme === undefined ){
-        theme = "1";
-    }
-
-    if ( theme === "2" ){
-        indexCss.href = '../css/indexDark.css';
-        themeIcon.src = '../images/index/lightmode.svg';
-        for (var i = 0; i < logos.length; i++) {
-            var logo = logos[i];
-            logo.src = '../images/index/logosimplewhite.svg';
-        }
-    }else if ( theme === "1" ){
-        indexCss.href = '../css/indexLight.css';
-        themeIcon.src = '../images/index/darkmode.svg';
-        for (var i = 0; i < logos.length; i++) {
-            var logo = logos[i];
-            logo.src = '../images/index/logosimple.svg';
-        }
-    }
-
-    language = getCookie(languageName);
-    if( language === null || language === "" || language === undefined ){
-        language = "en";
-    }
-
-    insertLanguageWebHtmlElements( pairingHtmlContent );
-    changeImageLangue ( "navlanguageimage" );
-    scrollDownChat()
-    
-    filterButtons( projectsDatabase ) 
-
-    for (let project in projectsDatabase){
-        insertProjectCard( createProjectCard( projectsDatabase[project] ) )
-    }
-}
-
-function display(id,typeDisplay){
-    /*Function to add a display css option to an element by accesing its ID.*/
-    element = document.getElementById(id);
-    element.style.display = typeDisplay;
-}
-
-function changeTheme(){
-    /*Function in charge to change the theme of the app*/
-
-    if(indexCss.href.includes('indexLight.css')){
-        indexCss.href = '../css/indexDark.css';
-        themeIcon.src = '../images/index/lightmode.svg';
-        for (var i = 0; i < logos.length; i++) {
-            var logo = logos[i];
-            logo.src = '../images/index/logosimplewhite.svg';
-        }
-        setCookie(themeName, "2", 4);
-    }
-    else if(indexCss.href.includes('indexDark.css')){
-        indexCss.href = '../css/indexLight.css';
-        themeIcon.src = '../images/index/darkmode.svg';
-        for (var i = 0; i < logos.length; i++) {
-            var logo = logos[i];
-            logo.src = '../images/index/logosimple.svg';
-        }
-        setCookie(themeName, "1", 4);
-    }
-}
 
 /********* FUNCITONS ABOUT PROJECTS *****************/
 
@@ -1227,6 +1173,191 @@ function selectAndFilterTechnology( technologyName,technologyHtmlId,projectsObje
 
 }
 
-/***************************** CHAT FUNCTIONS ******************************/
+/***************************** BLOG FUNCTIONS ******************************/
+
+function createBlogCard( blogEntryDatabase ){
+    /*Function to create blog card using object
+    Params:
+        • blogEntryDatabase: database with each post
+    */
+    const linkContainer = document.createElement("a");
+    linkContainer.classList.add("blogContainer_cards--post");
+    linkContainer.href = blogEntryDatabase.link;
+    linkContainer.target = "_blank";
+    
+    //Post info
+    const postInfoContainer = document.createElement("div");
+    postInfoContainer.classList.add("blogContainer_cards--postInfo");
+    const postTitle = document.createElement("p");
+    postTitle.classList.add("blogContainer_cards--postTitle");
+    postTitle.innerHTML = blogEntryDatabase.title;
+    const blogLanguageImg = document.createElement("img");
+    let readingMessage = "";
+    switch(blogEntryDatabase.language){
+        case es:
+            blogLanguageImg.src = "../images/index/spanish.svg";
+            blogLanguageImg.alt = "Español";
+            readingMessage = "Leer";
+            break;
+        case en:
+            blogLanguageImg.src = "../images/index/english.svg";
+            blogLanguageImg.alt = "English";
+            readingMessage = "Read";
+            break;
+        case fr:
+            blogLanguageImg.src = "../images/index/french.svg";
+            blogLanguageImg.alt = "Francais";
+            readingMessage = "Lire";
+            break;
+        case pt:
+            blogLanguageImg.src = "../images/index/portuguese.svg";
+            blogLanguageImg.alt = "Portuguese";
+            readingMessage = "Ler";
+            break;
+    }
+    postInfoContainer.appendChild(postTitle);
+    postInfoContainer.appendChild(blogLanguageImg);
+
+    //Post link
+    const postLinkContainer = document.createElement("div");
+    postLinkContainer.classList.add("blogContainer_cards--postLink");
+    const postRead = document.createElement("p");
+    postRead.classList.add("blogContainer_cards--postRead");
+    postRead.innerHTML = readingMessage;
+    const linkImage = document.createElement("img");
+    linkImage.src = "../images/index/newWindow.svg";
+    linkImage.alt = "New Window";
+    postLinkContainer.appendChild(postRead);
+    postLinkContainer.appendChild(linkImage);
+
+    linkContainer.appendChild(postInfoContainer);
+    linkContainer.appendChild(postLinkContainer);
+    return linkContainer;
+}
+
+function addCardPost( postCardHTML ){
+    /*Function to add a post card into HTML container*/
+    const blogContainerHtml = document.getElementById("blogscards");
+    blogContainerHtml.appendChild(postCardHTML)
+}
+
+
+function selectAndFilterByPostLanguage( languageName,languageHtmlId,blogObject ){
+    /*Filter to select the post languages published. .
+    Params;
+    • languageName: string of the language to be used; it must be es en pt fr
+    • languageHtmlId: ID of the element.
+    • blogObject: object with the blogs
+    */
+    const imgTechnology = document.getElementById(languageHtmlId);
+    imgTechnology.classList.toggle("selectedPostLanguage");
+
+    if(!selectedBlogLanguage.includes(languageName.toLocaleLowerCase())){
+        selectedBlogLanguage.push(languageName.toLocaleLowerCase());
+    }else{
+        index = selectedBlogLanguage.indexOf(languageName.toLocaleLowerCase());
+        selectedBlogLanguage.splice(index,1);
+    }
+    const mainContainer = document.getElementById("blogscards");
+    mainContainer.innerHTML = "";
+    if(selectedBlogLanguage.length>0){
+        let arrayCorrect = [];
+        for (let blog in blogObject){
+            if (selectedBlogLanguage.includes(blogObject[blog].language)){
+                arrayCorrect.push(blogObject[blog])
+            }
+        }
+        arrayCorrect.forEach(element => {
+            addCardPost( createBlogCard( element ) )
+        });
+        if(arrayCorrect.length == 0){
+            const instructionparragrapht = document.createElement("p");
+            instructionparragrapht.classList.add("projetsContainer_projetscards--instructions");
+            instructionparragrapht.innerHTML = getInnerText( htmlContent.noResult )
+            mainContainer.append(instructionparragrapht)
+        }
+    }else{
+        for (const post in blogObject) {
+            addCardPost( createBlogCard(blogObject[post]) );
+        }
+    }
+    
+
+}
+
+/***************************FUNCTION TO SET INITIAL SETTINGS***************************/
+
+function initialSetting(){
+    /*Function that does the initial setting of the webpage keeping in mind if it exist or not a cookie*/
+    theme = getCookie(themeName);
+
+    if( theme === null || theme === "" || theme === undefined ){
+        theme = "1";
+    }
+
+    if ( theme === "2" ){
+        indexCss.href = '../css/indexDark.css';
+        themeIcon.src = '../images/index/lightmode.svg';
+        for (var i = 0; i < logos.length; i++) {
+            var logo = logos[i];
+            logo.src = '../images/index/logosimplewhite.svg';
+        }
+    }else if ( theme === "1" ){
+        indexCss.href = '../css/indexLight.css';
+        themeIcon.src = '../images/index/darkmode.svg';
+        for (var i = 0; i < logos.length; i++) {
+            var logo = logos[i];
+            logo.src = '../images/index/logosimple.svg';
+        }
+    }
+
+    language = getCookie(languageName);
+    if( language === null || language === "" || language === undefined ){
+        language = "en";
+    }
+
+    insertLanguageWebHtmlElements( pairingHtmlContent );
+    changeImageLangue ( "navlanguageimage" );
+    scrollDownChat()
+    
+    filterButtons( projectsDatabase ) 
+
+    for (let project in projectsDatabase){
+        insertProjectCard( createProjectCard( projectsDatabase[project] ) )
+    }
+
+    for (const post in blogDatabase) {
+        addCardPost( createBlogCard(blogDatabase[post]) );
+    }
+}
+
+function display(id,typeDisplay){
+    /*Function to add a display css option to an element by accesing its ID.*/
+    element = document.getElementById(id);
+    element.style.display = typeDisplay;
+}
+
+function changeTheme(){
+    /*Function in charge to change the theme of the app*/
+
+    if(indexCss.href.includes('indexLight.css')){
+        indexCss.href = '../css/indexDark.css';
+        themeIcon.src = '../images/index/lightmode.svg';
+        for (var i = 0; i < logos.length; i++) {
+            var logo = logos[i];
+            logo.src = '../images/index/logosimplewhite.svg';
+        }
+        setCookie(themeName, "2", 4);
+    }
+    else if(indexCss.href.includes('indexDark.css')){
+        indexCss.href = '../css/indexLight.css';
+        themeIcon.src = '../images/index/darkmode.svg';
+        for (var i = 0; i < logos.length; i++) {
+            var logo = logos[i];
+            logo.src = '../images/index/logosimple.svg';
+        }
+        setCookie(themeName, "1", 4);
+    }
+}
 
 initialSetting()

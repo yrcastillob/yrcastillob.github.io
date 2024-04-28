@@ -120,51 +120,39 @@
             <p class="blogContainer_filter--instruction" id="blogsFilterMessage"></p>
 
             <div class="blogContainer_filter--options" id="filterblogoptions">
-                <img src="./images/index/spanish.svg" alt="Español">
-                <img src="./images/index/english.svg" alt="English">
-                <img src="./images/index/french.svg" alt="Français">
-                <img src="./images/index/portuguese.svg" alt="Português">
+                <img src="./images/index/spanish.svg" alt="Español"  id="bloglanges" onclick="selectAndFilterByPostLanguage( 'es','bloglanges',blogDatabase )">
+                <img src="./images/index/english.svg" alt="English"  id="bloglangen" onclick="selectAndFilterByPostLanguage( 'en','bloglangen',blogDatabase )">
+                <img src="./images/index/french.svg" alt="Français"  id="bloglangfr" onclick="selectAndFilterByPostLanguage( 'fr','bloglangfr',blogDatabase )">
+                <img src="./images/index/portuguese.svg" alt="Português"  id="bloglangpt" onclick="selectAndFilterByPostLanguage( 'pt','bloglangpt',blogDatabase )">
             </div>
 
         </div>
 
         <div class="blogContainer_cards" id="blogscards">
 
-            <a class="blogContainer_cards--post" href="https://medium.com/@yrcastillob/conceptos-b%C3%A1sicos-sobre-bases-de-datos-f8cf09a2b88f">
-                <div class="blogContainer_cards--postInfo">
-                    <p class="blogContainer_cards--postTitle">Conceptos básicos sobre bases de datos</p>
-                    <img src="./images/index/spanish.svg" alt="Español">
-                </div>
-                <div class="blogContainer_cards--postLink">
-                    <p class="blogContainer_cards--postRead">Leer</p>
-                    <img src="./images/index/newWindow.svg" alt="NewWindow">
-                </div>
-            </a>
-
-            <a class="blogContainer_cards--post" href="https://medium.com/@yrcastillob/conceptos-b%C3%A1sicos-sobre-bases-de-datos-f8cf09a2b88f">
-                <div class="blogContainer_cards--postInfo">
-                    <p class="blogContainer_cards--postTitle">Conceptos básicos sobre bases de datos</p>
-                    <img src="./images/index/spanish.svg" alt="Español">
-                </div>
-                <div class="blogContainer_cards--postLink">
-                    <p class="blogContainer_cards--postRead">Leer</p>
-                    <img src="./images/index/newWindow.svg" alt="NewWindow">
-                </div>
-            </a>
-
-            <a class="blogContainer_cards--post" href="https://medium.com/@yrcastillob/conceptos-b%C3%A1sicos-sobre-bases-de-datos-f8cf09a2b88f">
-                <div class="blogContainer_cards--postInfo">
-                    <p class="blogContainer_cards--postTitle">Conceptos básicos sobre bases de datos</p>
-                    <img src="./images/index/spanish.svg" alt="Español">
-                </div>
-                <div class="blogContainer_cards--postLink">
-                    <p class="blogContainer_cards--postRead">Leer</p>
-                    <img src="./images/index/newWindow.svg" alt="NewWindow">
-                </div>
-            </a>
-
-
+            
         </div>
     </div>
+    <dialog open class="contactContainer">
+        <img src="./images/index/close.svg" alt="close" class="contactContainer_closeimg">
+        <h2>Please, fill out the form.</h2>
+        <div class="contactContainer_item">
+            <label for="contactname">Name</label>
+            <input type="text" placeholder="Name - Nombre - Prenom" id="contactname" name="contactname">
+        </div>
+        <div class="contactContainer_item">
+            <label for="contactemail">Email</label>
+            <input type="email" placeholder="email@example.com" id="contactemail" name="contactemail">
+        </div>
+        <div class="contactContainer_item">
+            <label for="contactmessage">Message</label>
+            <textarea name="contactmessage" id="contactmessage" cols="30" rows="10"></textarea>
+        </div class="contactContainer_item">
+        <div class="contactContainer_button">
+            <p>Send</p>
+            <img src="./images/index/sendmessage.svg" alt="Send message">
+        </div>
+    </dialog>
+
 </body>
 </html>
