@@ -1402,6 +1402,29 @@ function sendForm() {
     });
 }
 
+/***************************FUNCTION TO CHANGE ZOOM IN PAGE***************************/
+
+function changeZoom(){
+    /*Function to change the zoom of the webpage to increase its font size so it is bigger*/
+    let symbol = document.getElementById("sizeicon");
+    if(symbol.src.includes('increase.svg')){
+        symbol.src = '../images/index/reduce.svg';
+        var nuevoZoom = document.body.style.zoom || 1;
+        nuevoZoom = parseFloat(nuevoZoom) + 0.3;
+        if (nuevoZoom <= 2) {
+            document.body.style.zoom = nuevoZoom;
+        }
+    } else if(symbol.src.includes('reduce.svg')){
+        symbol.src = '../images/index/increase.svg';
+        var nuevoZoom = document.body.style.zoom || 1;
+        nuevoZoom = parseFloat(nuevoZoom) - 0.3;
+        if (nuevoZoom >= 0.5) {
+            document.body.style.zoom = nuevoZoom;
+        }
+    }
+}
+
+
 /***************************FUNCTION TO SET INITIAL SETTINGS***************************/
 
 function initialSetting(){

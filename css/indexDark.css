@@ -225,6 +225,23 @@ header{
     transform: scale(1.04);
 }
 
+/*FONT SIZE*/
+
+.navContainer_fontsize{
+    margin-left: 1rem;
+    width: 2.5rem;
+    filter:invert(100%);
+    cursor: pointer;
+}
+
+.navContainer_fontsize:hover{
+    transform: scale(1.08);
+}
+
+.navContainer_fontsize:active{
+    transform: scale(1.04);
+}
+
 /*MENU ICON*/
 
 .navContainer_menuicon{
