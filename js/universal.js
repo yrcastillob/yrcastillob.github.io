@@ -68,7 +68,7 @@ const htmlContent = {
                 <ul>
                     <li>Utiliza la bandera redonda en el menú superior para cambiar el idioma.</li>
                     <li>La luna/sol en el menú superior cambia entre el modo oscuro y claro.</li>
-                    <li>Accede a las opciones de accesibilidad en el símbolo ubicado a tu mano derecha.</li>
+                    <li>El símbolo de la "A" incrementa o disminuye el zoom de la página para mejor lectura.</li>
                 </ul>
                 <p class="welcomemessage--title">Selecciona una opción en la barra inferior para obtener más información sobre mí.</p>
         `,
@@ -78,7 +78,7 @@ const htmlContent = {
         <ul class="welcomemessage--list">
             <li>Use the round flag in the top menu to change the language.</li>
             <li>The moon/sun icon in the top menu toggles between dark and light mode.</li>
-            <li>Access accessibility options using the symbol located to your right.</li>
+            <li>The 'A' symbol increases or decreases the page zoom for better readability.</li>
         </ul>
         <p class="welcomemessage--title">Select an option in the bottom bar for more information about me.</p>
         `,
@@ -88,7 +88,7 @@ const htmlContent = {
         <ul class="welcomemessage--list">
             <li>Utilisez le drapeau rond dans le menu supérieur pour changer de langue.</li>
             <li>L'icône lune/soleil dans le menu supérieur bascule entre le mode sombre et clair.</li>
-            <li>Accédez aux options d'accessibilité en utilisant le symbole situé à votre droite.</li>
+            <li>Le symbole 'A' augmente ou diminue le zoom de la page pour une meilleure lisibilité.</li>
         </ul>
         <p class="welcomemessage--title">Sélectionnez une option dans la barre inférieure pour plus d'informations sur moi.</p>
         `,
@@ -98,7 +98,7 @@ const htmlContent = {
         <ul class="welcomemessage--list">
             <li>Use a bandeira redonda no menu superior para mudar o idioma.</li>
             <li>O ícone de lua/sol no menu superior alterna entre o modo escuro e claro.</li>
-            <li>Acesse as opções de acessibilidade usando o símbolo localizado à sua direita.</li>
+            <li>O símbolo 'A' aumenta ou diminui o zoom da página para uma melhor legibilidade.</li>
         </ul>
         <p class="welcomemessage--title">Selecione uma opção na barra inferior para mais informações sobre mim.</p>
         `
