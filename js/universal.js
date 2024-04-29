@@ -133,6 +133,30 @@ const htmlContent = {
         fr: "Veuillez sélectionner la langue du filtre :",
         pt: "Por favor, selecione o idioma do filtro:"
     },
+    nameLabel: {
+        es: "Nombre Completo",
+        en: "Full Name",
+        fr: "Nom Complet",
+        pt: "Nome Completo"
+    },
+    emaillabel: {
+        es: "Correo electrónico",
+        en: "E-mail",
+        fr: "E-mail",
+        pt: "E-mail"
+    },
+    messagelabel: {
+        es: "Mensaje",
+        en: "Message",
+        fr: "Message",
+        pt: "Mensagem"
+    },
+    contacttitle: {
+        es: "Por favor, complete el formulario.",
+        en: "Please, fill out the form.",
+        fr: "Veuillez remplir le formulaire.",
+        pt: "Por favor, preencha o formulário."
+    }
 }
 
 // Interactive CV
@@ -798,10 +822,12 @@ const pairingHtmlContent = [
     ["skillsbutton",responsesInteractiveCV.skills.title],
     ["projectsFilter",htmlContent.projectsTitle],
     ["projectsFilterMessage",htmlContent.projectsIntructions],
-    ["blogsFilterMessage",htmlContent.blogIntructions]
+    ["blogsFilterMessage",htmlContent.blogIntructions],
+    ["namelabel",htmlContent.nameLabel],
+    ["emaillabel",htmlContent.emaillabel],
+    ["messagelabel",htmlContent.messagelabel],
+    ["contacttitle",htmlContent.contacttitle]
 ];
-
-
 
 
 /*************************** COOKIES ***************************/
@@ -1024,16 +1050,10 @@ function createProjectCard( cardObject ){
     maindiv.classList.add("projetsContainer_item");
 
     //Background image
-    const backgroundiv = document.createElement("div");
-    backgroundiv.classList.add("projetsContainer_item--background");
-
-    const backimg = document.createElement("img");
-    backimg.src =  cardObject.background;
-    console.log(cardObject.background)
-    backgroundiv.appendChild(backimg);
-    const overlay = document.createElement("div");
-    overlay.classList.add("projetsContainer_item--background--overlay");
-    backgroundiv.appendChild(overlay);
+    const backgrounimg = document.createElement("img");
+    backgrounimg.classList.add("projetsContainer_item--cover");
+    backgrounimg.src =  cardObject.background;
+    maindiv.appendChild(backgrounimg);
 
     //Project description container
     const descriptiondiv =  document.createElement("div");
@@ -1090,10 +1110,8 @@ function createProjectCard( cardObject ){
         gitlink.appendChild(imagegit);
         linkscontainer.appendChild(gitlink)
     }
-    maindiv.appendChild(backgroundiv);
+    descriptiondiv.appendChild(linkscontainer);
     maindiv.appendChild(descriptiondiv);
-    maindiv.appendChild(linkscontainer);
-
     return maindiv;
 }
 
@@ -1283,6 +1301,50 @@ function selectAndFilterByPostLanguage( languageName,languageHtmlId,blogObject )
     }
     
 
+}
+/*************************** CONTACT DIALOG ************************/
+function openDialog(dialogid) {  
+    var dialog = document.getElementById(dialogid);
+    dialog.showModal();
+}
+    
+function closeDialog(dialogid) { 
+    var dialog = document.getElementById(dialogid); 
+    dialog.close();
+}
+
+
+function sendForm() {
+    const name = document.getElementById('contactname').value;
+    const email = document.getElementById('contactemail').value;
+    const message = document.getElementById('contactmessage').value;
+
+    if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email) === false) {
+        alert('"El correo electrónico no es válido.');
+        return false
+    }
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('message', message);
+
+    fetch('https://formsubmit.co/bcd1a961e269569e4340b2deaf50ba30', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Mensaje enviado, te contactaré a la mayor brevedad posible.');
+            closeDialog('contactContainer');
+        } else {
+            alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+    });
 }
 
 /***************************FUNCTION TO SET INITIAL SETTINGS***************************/

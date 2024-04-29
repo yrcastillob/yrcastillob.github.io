@@ -578,11 +578,12 @@ div#welcomemessage ul li{
     border-radius: 2rem;
   }
   
+
 /********************* PROJECTS SECTION *********************/
 
 .projetsContainer{
     min-height: 90vh;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     padding-top: 10vh;
 }
@@ -667,136 +668,186 @@ div#welcomemessage ul li{
 
 /*Projects card*/
 
-.projetsContainer_item{
-    height: 20rem;
+.projetsContainer_projetscards{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.projetsContainer_item{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 35rem;
+    height: 30rem;
     align-items: center;
+    padding: 1rem;
+    transition: 0.3s;
+    margin: 1rem;
+    border-radius: 1.3rem;
     position: relative;
     overflow: hidden;
-    padding: 3rem;
+    filter: drop-shadow(var(--shadow));
     transition: 0.3s;
+    border: solid 0.1rem rgba(0, 0, 0, 0.466);
 }
 
 .projetsContainer_item:hover{
-    height: 26rem;
-    transition: 0.3s;
-}
-
-.projetsContainer_item--background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-    background-color: var(--babypowder);
-}
-
-.projetsContainer_item--background img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-}
-
-.projetsContainer_item:hover .projetsContainer_item--background--overlay {
-    background-color: rgba(240, 248, 255, 0.753);
-}
-
-.projetsContainer_item--background--overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(240, 248, 255, 0.87);
-    z-index: 1; 
-}
-
-
-.projetsContainer_item--links{
-    display: flex;
-    flex-flow: row nowrap;
-    width: 30rem;
-    justify-content: center;
-}
-
-.projetsContainer_item--links .projetsContainer_item--linkpage , .projetsContainer_item--links .projetsContainer_item--github {
-    padding: 1rem;
-    background-color: rgb(70, 178, 250);
-    border-radius: 1.3rem;
-    margin: 1rem;
-    filter: drop-shadow(var(--shadow));
-}
-
-.projetsContainer_item--linkpage:hover , .projetsContainer_item--github:hover {
     transform: scale(1.06);
+    border: none;
     transition: 0.3s;
 }
 
-.projetsContainer_item--linkpage:active , .projetsContainer_item--github:active {
-    transform: scale(1.03);
-    transition: 0.3s;
+.projetsContainer_item--cover{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    
 }
 
-.projetsContainer_item--linkpage img, .projetsContainer_item--github img{
-    width: 8rem;
+.projetsContainer_item:hover .projetsContainer_item--cover{
+    opacity: 0;
+    transition: 0.4s;
 }
 
 .projetsContainer_item--description{
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    background-color: rgb(70, 178, 250);
-    filter: drop-shadow(var(--shadow));
-    padding: 1rem;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--grey);
+    background-image: url('../images/index/patronwhite.svg');
+    background-size: 35rem;
     border-radius: 1.3rem;
-    height: 15rem;
-    width: 80%
+    padding: 0.3rem;
+    position: relative;
 }
 
-.projetsContainer_item--description--title{
-    font-size: 2rem;
+.projetsContainer_item:hover .projetsContainer_item--description{
+    border: solid 0.1rem rgba(0, 0, 0, 0.288);
+    transition: 0.3s;
+}
+
+
+.projetsContainer_item--description .projetsContainer_item--description--title{
+    font-size: 2.5rem;
+    width: 100%;
     font-weight: bolder;
-    font-family: var(--title);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 90%;
-    max-height: 4rem;
+    text-align: center;
+    filter: drop-shadow(var(--shadow));
+    color: var(--black);
+    max-height: 6rem;
+    overflow-y: hidden;
+    position: absolute;
+    top: 0rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.projetsContainer_item--description--technology{
+.projetsContainer_item--description .projetsContainer_item--description--technology{
     display: flex;
     flex-flow: row wrap;
     list-style: none;
-    margin: 1rem;
-    max-height: 10rem;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    max-height: 6rem;
+    overflow-y: scroll;
+    position: absolute;
+    top: 5.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.projetsContainer_item--description--technology li{
-    padding: 0.4rem 0.8rem;
-    margin: 0.4rem 1rem;
-    background-color: rgb(70, 178, 250);
-    border: solid 0.1rem rgba(0, 0, 0, 0.418);
+
+.projetsContainer_item--description .projetsContainer_item--description--technology li{
+    border: solid var(--black) 0.1rem;
     border-radius: 1.3rem;
+    padding: 0.2rem 0.8rem;
+    margin: 0.3rem 0;
+    color: var(--black);
+    filter: drop-shadow(var(--shadow));
+}
+
+.projetsContainer_item:hover .projetsContainer_item--description--technology li{
+    background-color: var(--black);
+    color: var(--grey);
+    transition: 0.3s;
 }
 
 .projetsContainer_item--description--text{
-    max-height: 5rem;
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-align: center;
+    font-weight: bold;
+    color: var(--black);
+    max-height: 7rem;
+    overflow-y: scroll;
+    position: absolute;
+    top: 13rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
+.projetsContainer_item--description--technology::-webkit-scrollbar,.projetsContainer_item--description--text::-webkit-scrollbar {
+    width: 0.3rem;
+}
+
+.projetsContainer_item--description--technology::-webkit-scrollbar-track,.projetsContainer_item--description--text::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.123);
+    border-radius: 1.3rem;
+}
+  
+.projetsContainer_item--description--technology::-webkit-scrollbar-thumb, .projetsContainer_item--description--text::-webkit-scrollbar-thumb {
+    background: var(--black);
+    border-radius: 2rem;
+}
+
+.projetsContainer_item--links{
+    display: flex;
+    flex-flow: row nowrap;
+    position: absolute;
+    justify-content: space-evenly;
+    top: 21rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.projetsContainer_item--links a{
+    margin: 0 1rem;
+}
+
+.projetsContainer_item--links a:hover{
+    transform: scale(1.06);
+    transition: 0.3s;
+}
+
+.projetsContainer_item--links a:active{
+    transform: scale(1.02);
+}
+
+
+.projetsContainer_item--links a img{
+    height: 6rem;
+    filter:drop-shadow(var(--shadow));
+}
+
 
 .projetsContainer_projetscards--instructions{
     text-align: center;
-    margin: 2rem auto;
-    width: 80%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bolder;
-    margin-top: 10rem;
+    margin: 8rem auto;
 }
 
 /********************* BLOGS SECTION *********************/
@@ -873,6 +924,7 @@ div#welcomemessage ul li{
     flex-flow: row nowrap;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 .blogContainer_cards--postInfo{
@@ -906,7 +958,6 @@ div#welcomemessage ul li{
     height: 100%;
     background-color: var(--blue);
     right: 0%;
-    border-radius: 0 1.2rem 1.2rem 0;
     color: var(--grey);
 }
 
@@ -938,12 +989,11 @@ div#welcomemessage ul li{
 }
 
 /*********************** CONTACT CONTAINER ***********************/
-.contactContainer{
+
+.contactContainer[open]{
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 111;
+    margin: auto;
+    inset: 0;
     background-color: var(--grey);
     width: 80vw;
     min-height: fit-content;
@@ -953,6 +1003,12 @@ div#welcomemessage ul li{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
+}
+
+dialog::backdrop {
+    background-color: #2195f394;
+    background-image: url('../images/index/patronwhite.svg');
+    background-size: 12rem;
 }
 
 .contactContainer_closeimg{
@@ -1047,9 +1103,6 @@ div#welcomemessage ul li{
 
 /********************* MEDIA QUERIES *********************/
 
-@media screen and (max-width: 1007px) {
-    
-  }
 
 @media screen and (max-width: 768px) {
     .navContainer_menuicon{
@@ -1115,37 +1168,11 @@ div#welcomemessage ul li{
         right: 4%;
     }
 
-    .projetsContainer_item{
-        flex-flow: column nowrap;
-        height: 30rem;
-    }
-
-    .projetsContainer_item:hover{
-        height: 34rem;
-        transition: 0.3s;
-    }
-
-    .projetsContainer_item--description{
-        width: 90%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .projetsContainer_item--description--title{
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 90%;
-        max-height: 5rem;
-    }
 
     .chatContainer_messages .messageEducation strong {
         border: none
     }
-
-    .projetsContainer_item--description{
-        height: 25rem;
-    }
+    
 
     .blogContainer_cards--post{
         width: 98%;

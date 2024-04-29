@@ -61,7 +61,7 @@
 
         <div class="chatContainer_contactInformation"> 
 
-            <div class="chatContainer_contactInformation--email">
+            <div class="chatContainer_contactInformation--email" onclick="openDialog('contactContainer')">
                 <p id="sendmemessagetag"></p>
                 <img src="./images/index/email.svg" alt="Send email" class="chatContainer_contactInformation--img">
             </div>
@@ -101,10 +101,7 @@
         </div>
 
         <div class="projetsContainer_projetscards" id="projetscards">
-
             
-
-
         </div>
         
 
@@ -133,26 +130,26 @@
             
         </div>
     </div>
-    <dialog open class="contactContainer">
-        <img src="./images/index/close.svg" alt="close" class="contactContainer_closeimg">
-        <h2>Please, fill out the form.</h2>
+
+    <dialog class="contactContainer" id="contactContainer">
+        <img src="./images/index/close.svg" alt="close" class="contactContainer_closeimg" onclick="closeDialog('contactContainer')">
+        <h2 id="contacttitle"></h2>
         <div class="contactContainer_item">
-            <label for="contactname">Name</label>
-            <input type="text" placeholder="Name - Nombre - Prenom" id="contactname" name="contactname">
+            <label for="contactname" id="namelabel"></label>
+            <input type="text" placeholder="Name - Nombre - Prenom" id="contactname" name="name">
         </div>
         <div class="contactContainer_item">
-            <label for="contactemail">Email</label>
-            <input type="email" placeholder="email@example.com" id="contactemail" name="contactemail">
+            <label for="contactemail" id="emaillabel"></label>
+            <input type="email" placeholder="email@example.com" id="contactemail" name="email">
         </div>
         <div class="contactContainer_item">
-            <label for="contactmessage">Message</label>
+            <label for="contactmessage" id="messagelabel"></label>
             <textarea name="contactmessage" id="contactmessage" cols="30" rows="10"></textarea>
         </div class="contactContainer_item">
-        <div class="contactContainer_button">
+        <div class="contactContainer_button" onclick="sendForm()">
             <p>Send</p>
             <img src="./images/index/sendmessage.svg" alt="Send message">
         </div>
     </dialog>
-
 </body>
 </html>

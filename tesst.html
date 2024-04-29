@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .contactContainer{
+    position: fixed;
+    margin: auto;
+    inset: 0;
+    z-index: 111;
+    background-color: var(--grey);
+    width: 80vw;
+    min-height: fit-content;
+    padding: 1rem;
+    border-radius: 1.3rem;
+    border: solid 0.1rem rgba(0, 0, 0, 0.164);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
+
+.contactContainer::backdrop {
+    background-color: rgb(0, 0, 0);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    margin: auto;
+    inset: 0;
+}
+
+dialog::backdrop {
+  background-color: darkorange;
+  background-image: linear-gradient(
+    130deg,#ff7a18,
+    #af002d 41.07%,
+    #319197 76.05%
+  );
+}
+</style>
+<body>
+    <dialog>
+        <h2>I'm a dialog window</h2>
+        <button onclick="closeDialog()">Close</button>
+      </dialog>  
+      
+      <button onclick="openDialog()">Open dialog</button>
+<script>
+var dialog = document.querySelector('dialog');
+    function openDialog() {  
+      dialog.showModal();
+    }
+    function closeDialog() {  
+      dialog.close();
+    }</script>
+</body>
+</html>
