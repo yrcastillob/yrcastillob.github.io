@@ -16,6 +16,44 @@
     --shadow: #08070838 0rem 0rem 0.4rem
 }
 
+.goHomeLink{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    text-decoration: none;
+    background-color: rgb(94, 214, 250);
+    border-radius: 50%;
+    max-height: 30px;
+}
+
+.goHomeLink img{
+    width: 30px;
+}
+
+.goHomeLink p{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 13px;
+    display: none;
+}
+
+.goHomeLink:hover{
+    transform: scale(1.03);
+    border-radius: 13px;
+    transition: 0.2s;
+}
+
+.goHomeLink:hover p{
+    display: flex;
+}
+
 /*MAIN CONTAINER*/
 body{
     display: flex;
