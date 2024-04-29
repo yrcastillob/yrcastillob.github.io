@@ -694,6 +694,7 @@ div#welcomemessage ul li{
 .projetsContainer_item:hover{
     transform: scale(1.06);
     border: none;
+    padding: 0;
     transition: 0.3s;
 }
 
@@ -703,12 +704,6 @@ div#welcomemessage ul li{
     position: absolute;
     object-fit: cover;
     top: 0;
-    
-}
-
-.projetsContainer_item:hover .projetsContainer_item--cover{
-    opacity: 0;
-    transition: 0.4s;
 }
 
 .projetsContainer_item--description{
@@ -720,7 +715,7 @@ div#welcomemessage ul li{
     width: 100%;
     height: 100%;
     background-color: var(--grey);
-    background-image: url('../images/index/patronwhite.svg');
+    border: solid 0.1rem rgba(0, 0, 0, 0.288);
     background-size: 35rem;
     border-radius: 1.3rem;
     padding: 0.3rem;
@@ -1099,6 +1094,38 @@ dialog::backdrop {
 .contactContainer_button:active p, .contactContainer_button:active img{
     transform: scale(1);
     transition: 0.2s;
+}
+
+/********************* SYSTEM ALERTS MESSAGES *********************/
+.messagesContainer{
+    position: fixed;
+    z-index: 121;
+    top: 5rem;
+    right: 3rem;
+    width: 50rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+}
+
+.messagesContainer_success{
+    background-color: var(--greenTwo);
+    padding: 1rem;
+    max-width: 50%;
+    margin-bottom: 1rem;
+    border-radius: 1.3rem 1.3rem 0 1.3rem;
+    color: var(--black);
+    font-weight: bolder;
+}
+
+.messagesContainer_error{
+    background-color: red;
+    padding: 1rem;
+    max-width: 50%;
+    margin-bottom: 1rem;
+    border-radius: 1.3rem 1.3rem 0 1.3rem;
+    color: var(--black);
+    font-weight: bolder;
 }
 
 /********************* MEDIA QUERIES *********************/

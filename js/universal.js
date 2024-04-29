@@ -1314,20 +1314,48 @@ function closeDialog(dialogid) {
 }
 
 
+function addMessageForm(message,state){
+    const messageContainer = document.getElementById('messagesContainer');
+    const divMessage = document.createElement("div");
+    divMessage.innerHTML = message;
+    
+    if (state === "success"){
+        divMessage.classList.add("messagesContainer_success");
+    } else {
+        divMessage.classList.add("messagesContainer_error");
+    }
+    messageContainer.appendChild(divMessage);
+
+    setTimeout(function() {
+        const messageDiv = messageContainer.querySelector('div');
+        messageDiv.remove();
+      }, 4000);
+}
+
 function sendForm() {
     const name = document.getElementById('contactname').value;
     const email = document.getElementById('contactemail').value;
     const message = document.getElementById('contactmessage').value;
 
+    
     if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email) === false) {
-        alert('"El correo electrónico no es válido.');
+        let errorEmail = {
+            es: "Correo electrónico no válido.",
+            en: "Invalid email address.",
+            fr: "Adresse e-mail invalide.",
+            pt: "Endereço de e-mail inválido.",
+        }
+        addMessageForm(getInnerText( errorEmail ),"error");
         return false
     }
-
+ 
     const formData = new FormData();
     formData.append('name', name);
     formData.append('email', email);
     formData.append('message', message);
+    formData.append('_next', "https://yrcastillob.github.io/index.html");
+    formData.append('_subject', "New message from your blog!");
+    formData.append('_captcha', "false");
 
     fetch('https://formsubmit.co/bcd1a961e269569e4340b2deaf50ba30', {
         method: 'POST',
@@ -1335,15 +1363,38 @@ function sendForm() {
     })
     .then(response => {
         if (response.ok) {
-            alert('Mensaje enviado, te contactaré a la mayor brevedad posible.');
-            closeDialog('contactContainer');
+            let successMessage = {
+                es: "¡Mensaje enviado! Me pondré en contacto contigo lo antes posible.",
+                en: "Message sent! I will contact you as soon as possible.",
+                fr: "Message envoyé ! Je vous contacterai dès que possible.",
+                pt: "Mensagem enviada! Entrarei em contato o mais breve possível.",
+            }
+            addMessageForm(getInnerText( successMessage ),"success");
+            document.getElementById('contactname').value = "";
+            document.getElementById('contactemail').value = "";
+            document.getElementById('contactmessage').value = "";
+            setTimeout(function() {
+                closeDialog('contactContainer');
+              }, 4000);
+            
         } else {
-            alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+            let errorMessage = {
+                es: "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+                en: "There was an error sending the message. Please try again.",
+                fr: "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.",
+                pt: "Houve um erro ao enviar a mensagem. Por favor, tente novamente.",
+            }
+            addMessageForm(getInnerText( errorMessage ),"error");
         }
     })
     .catch(error => {
-        console.error('Error:', error);
-        alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+        let errorMessage = {
+            es: `Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo. Error: ${error}`,
+            en: `There was an error sending the message. Please try again. Error: ${error}`,
+            fr: `Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer. Error: ${error}`,
+            pt: `Houve um erro ao enviar a mensagem. Por favor, tente novamente. Error: ${error}`,
+        }
+        addMessageForm(getInnerText( errorMessage ),"error");
     });
 }
 
