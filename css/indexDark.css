@@ -862,7 +862,7 @@ div#welcomemessage ul li{
 
 /********************* BLOGS SECTION *********************/
 .blogContainer{
-    min-height: 85vh;
+    min-height: 95vh;
     width: 100%;
     margin: 0 auto;
     padding-top: 3vh;

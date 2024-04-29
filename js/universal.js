@@ -1304,17 +1304,20 @@ function selectAndFilterByPostLanguage( languageName,languageHtmlId,blogObject )
 }
 /*************************** CONTACT DIALOG ************************/
 function openDialog(dialogid) {  
+    /*Function to open a dialog by using its id*/
     var dialog = document.getElementById(dialogid);
     dialog.showModal();
 }
     
-function closeDialog(dialogid) { 
+function closeDialog(dialogid) {
+    /*Function to close a dialog by using its id*/ 
     var dialog = document.getElementById(dialogid); 
     dialog.close();
 }
 
 
 function addMessageForm(message,state){
+    /*Function to add a message into the dialog as a form of alert*/
     const messageContainer = document.getElementById('messagesContainer');
     const divMessage = document.createElement("div");
     divMessage.innerHTML = message;
@@ -1333,6 +1336,7 @@ function addMessageForm(message,state){
 }
 
 function sendForm() {
+    /*Function to send the form*/
     const name = document.getElementById('contactname').value;
     const email = document.getElementById('contactemail').value;
     const message = document.getElementById('contactmessage').value;
@@ -1473,4 +1477,36 @@ function changeTheme(){
     }
 }
 
+function closeMenu(){
+    /*Function to hide the menu if something is clicked when width less than 769*/
+    if (window.innerWidth < 769){
+        element = document.getElementById('navContainer_menuitems');
+        element.style.display = 'none';
+    }
+}
+
+const menuItems = document.querySelectorAll('.menu-item');
+
+window.addEventListener('scroll', highlightMenuItem);
+
+function highlightMenuItem() {
+    /*Function to highligth the menu of the item */
+    const scrollPosition = window.scrollY;
+
+    menuItems.forEach(item => {
+    const sectionId = item.getAttribute('href').substring(1);
+    const section = document.getElementById(sectionId);
+    const sectionPosition = section.getBoundingClientRect();
+
+    if (sectionPosition.top <= scrollPosition && sectionPosition.bottom >= scrollPosition) {
+        menuItems.forEach(item => {
+        item.classList.remove('navContainer_menu--selected');
+            });
+        item.classList.add('navContainer_menu--selected');
+        }
+    });
+}
+
+
 initialSetting()
+
