@@ -45,6 +45,9 @@ strong{
 
 body{
     font-size: 1.6rem;
+    min-width: 100vw;
+    max-width: 100vw;
+    position: relative;
 }
 
 /********************NAVBAR*********************/
@@ -616,19 +619,17 @@ div#welcomemessage ul li{
 }
 
 .projetsContainer_filter--title{
-    margin-left: 1rem;
     font-size: 3rem;
     width: 90%;
-    margin: 0 auto;
 }
 
 /*Filter part*/
 .projetsContainer_filter{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     width: 90%;
-    margin: 0 auto;
+    margin-top: 2rem;
 }
 
 .projetsContainer_filter--instruction{
@@ -640,10 +641,8 @@ div#welcomemessage ul li{
 
 .projetsContainer_filter--options{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
     white-space: nowrap;
     width: calc(100vw-18rem);
     margin-bottom: 1rem;
@@ -895,7 +894,7 @@ div#welcomemessage ul li{
 
 .blogContainer_filter{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     width: 90%;
     margin: 2rem auto;
@@ -910,7 +909,7 @@ div#welcomemessage ul li{
 
 .blogContainer_filter--options{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
 }
 
 .blogContainer_filter--options img{
@@ -1242,5 +1241,14 @@ dialog::backdrop {
 
     .blogContainer_cards--post{
         width: 98%;
+    }
+
+    .blogContainer_filter--options{
+        margin: 1rem auto;
+    }
+
+    .projetsContainer_filter--options{
+        margin: 1rem auto;
+        justify-content: center;
     }
   }
