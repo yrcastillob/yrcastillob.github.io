@@ -45,6 +45,8 @@ strong{
 
 body{
     font-size: 1.6rem;
+    background-image: url("../images/index/texture.svg");
+    background-size: 28rem;
 }
 
 /********************NAVBAR*********************/
@@ -388,6 +390,7 @@ header{
     background-image: url("../images/index/patronblack.svg");
     border: solid 0.1rem rgba(61, 61, 61, 0.158);
     overflow-y: auto;   
+    background-color: var(--grey);
 }
 
 .chatContainer_messages::-webkit-scrollbar {

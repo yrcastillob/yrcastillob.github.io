@@ -62,44 +62,49 @@ const htmlContent = {
     },
     welcomemessage: {
         es: `
-        ¡Bienvenido a mi página web personal!
-                <p class="welcomemessage--title">Recomendaciones</p>
-                <ul>
-                    <li>Utiliza la bandera redonda en el menú superior para cambiar el idioma.</li>
-                    <li>La luna/sol en el menú superior cambia entre el modo oscuro y claro.</li>
-                    <li>El símbolo de la "A" incrementa o disminuye el zoom de la página para mejor lectura.</li>
-                </ul>
-                <p class="welcomemessage--title">Selecciona una opción en la barra inferior para obtener más información sobre mí.</p>
+        ¡Bienvenido a mi página web personal! 
+        <p class="welcomemessage--title">En el menú superior derecho encontrarás: </p>
+        <ul>
+            <li> Opción de cambio de idioma. </li>
+            <li>El ícono de la luna/sol para alternar entre el modo oscuro y claro. </li>
+            <li>El símbolo de la "A" para ajustar el zoom de la página. </li>
+        </ul>
+        <p class="welcomemessage--title">Haz clic en una opción de la barra inferior de este chat para obtener más información sobre mí. </p>
+        ¡Disfruta tu visita!
         `,
         en: `
         Welcome to my personal website!
-        <p class="welcomemessage--title">Recommendations</p>
-        <ul class="welcomemessage--list">
-            <li>Use the round flag in the top menu to change the language.</li>
-            <li>The moon/sun icon in the top menu toggles between dark and light mode.</li>
-            <li>The 'A' symbol increases or decreases the page zoom for better readability.</li>
+        <p class="welcomemessage--title">In the top right menu, you'll find:</p>
+        <ul>
+            <li>Language change option.</li>
+            <li>The moon/sun icon to toggle between dark and light mode.</li>
+            <li>The "A" symbol to adjust the page zoom.</li>
         </ul>
-        <p class="welcomemessage--title">Select an option in the bottom bar for more information about me.</p>
+        <p class="welcomemessage--title">Select an option from the bottom bar of this chat to learn more about me.</p>
+        Enjoy your visit!
         `,
         fr: `
         Bienvenue sur mon site web personnel !
-        <p class="welcomemessage--title">Recommandations</p>
-        <ul class="welcomemessage--list">
-            <li>Utilisez le drapeau rond dans le menu supérieur pour changer de langue.</li>
-            <li>L'icône lune/soleil dans le menu supérieur bascule entre le mode sombre et clair.</li>
-            <li>Le symbole 'A' augmente ou diminue le zoom de la page pour une meilleure lisibilité.</li>
+        <p class="welcomemessage--title">Dans le menu en haut à droite, vous trouverez :</p>
+        <ul>
+            <li>Option de changement de langue.</li>
+            <li>L'icône de la lune/soleil pour basculer entre le mode sombre et clair.</li>
+            <li>Le symbole "A" pour ajuster le zoom de la page.</li>
         </ul>
-        <p class="welcomemessage--title">Sélectionnez une option dans la barre inférieure pour plus d'informations sur moi.</p>
+        <p class="welcomemessage--title">Sélectionnez une option dans la barre inférieure de ce chat pour en savoir plus sur moi.</p>
+        Profitez de votre visite !
+
         `,
         pt: `
         Bem-vindo ao meu site pessoal!
-        <p class="welcomemessage--title">Recomendações</p>
-        <ul class="welcomemessage--list">
-            <li>Use a bandeira redonda no menu superior para mudar o idioma.</li>
-            <li>O ícone de lua/sol no menu superior alterna entre o modo escuro e claro.</li>
-            <li>O símbolo 'A' aumenta ou diminui o zoom da página para uma melhor legibilidade.</li>
+        <p class="welcomemessage--title">No menu superior direito, você encontrará:</p>
+        <ul>
+            <li>Opção de mudança de idioma.</li>
+            <li>O ícone da lua/sol para alternar entre o modo escuro e claro.</li>
+            <li>O símbolo "A" para ajustar o zoom da página.</li>
         </ul>
-        <p class="welcomemessage--title">Selecione uma opção na barra inferior para mais informações sobre mim.</p>
+        <p class="welcomemessage--title">Selecione uma opção na barra inferior deste chat para saber mais sobre mim.</p>
+        Aproveite sua visita!
         `
     },
     filterInstructions:{
