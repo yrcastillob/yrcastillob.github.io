@@ -1,14 +1,13 @@
 /*************************** VARIABLES ***************************/
 // Cookies Names
-const themeName = "theme";
-const languageName = "language";
-const zoomName = "zoom";
+
 const es = "es";
 const en = "en";
 const fr = "fr";
 const pt = "pt";
-let theme;
-let language;
+let theme = "1";
+let language = es;
+let zoom;
 
 // TechnologyNames
 const techonologyNames = {
@@ -829,33 +828,6 @@ const pairingHtmlContent = [
     ["contacttitle",htmlContent.contacttitle]
 ];
 
-
-/*************************** COOKIES ***************************/
-
-function setCookie(cname, cvalue, exdays) {
-    /*Function to set Cookies taken from https://www.w3schools.com/js/js_cookies.asp*/
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    let expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-  
-function getCookie(cname) {
-    /*Function to get Cookies taken from https://www.w3schools.com/js/js_cookies.asp*/
-    let name = cname + "=";
-    let ca = document.cookie.split(';');
-    for(let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-}
-
 /**************************FUNCTION TO MANAGE CHAT**************************/
 
 function getInteractiveCVInfo( topic, objectSelection ){
@@ -898,7 +870,6 @@ function createMessage( className, object ){
     Params:
     object = Object that contains the data to be retrieved.
     className = class that will be asssigned, it can be usermessage or systemmessage*/
-    language = getCookie( languageName );
     let innerContent = "";
     const chat = document.getElementById("chatmessages");
     switch ( language ){
@@ -985,10 +956,14 @@ function changeLanguage( languageSelection ){
     /*Function to change the language of the web page.
     Params:
     languageselection = string that only can be sp, en, pt or fr */
-    setCookie( languageName, languageSelection, 4 );
-    language = getCookie( languageName );
+    language = languageSelection
     insertLanguageWebHtmlElements( pairingHtmlContent );
     changeImageLangue ( "navlanguageimage" );
+    const mainContainer = document.getElementById("projetscards");
+    mainContainer.innerHTML = "";
+    for (let project in projectsDatabase){
+        insertProjectCard( createProjectCard( projectsDatabase[project] ) )
+    }
 }
 
 function changeImageLangue ( idImageHtml ){
@@ -1019,7 +994,6 @@ function getInnerText( object ){
     Params:
     object = Object that contains the data to be retrieved.
     */
-    language = getCookie( languageName );
     let innerContent = "";
     switch ( language ){
         case es:
@@ -1402,58 +1376,75 @@ function sendForm() {
     });
 }
 
-/***************************FUNCTION TO CHANGE ZOOM IN PAGE***************************/
+// /* /* /***************************FUNCTION TO CHANGE ZOOM IN PAGE***************************/
 
-function changeZoom(){
-    /*Function to change the zoom of the webpage to increase its font size so it is bigger*/
+function changeZoom() {
+    /* Function to change the zoom of the webpage to increase its font size */
     let symbol = document.getElementById("sizeicon");
-    if(symbol.src.includes('increase.svg')){
+    if (symbol.src.includes('increase.svg')) {
         symbol.src = '../images/index/reduce.svg';
-        var nuevoZoom = document.body.style.zoom || 1;
-        nuevoZoom = parseFloat(nuevoZoom) + 0.3;
-        if (nuevoZoom <= 2) {
-            document.body.style.zoom = nuevoZoom;
-        }
-    } else if(symbol.src.includes('reduce.svg')){
+        // Select specific elements in the document
+        var elements = document.querySelectorAll('p, div, ul, ol, li, h1, h2, h3, h4, input, label');
+
+        // For each selected element
+        elements.forEach(function(element) {
+            // Get the current font size
+            var style = window.getComputedStyle(element);
+            var currentSize = parseFloat(style.fontSize); // Get the current size as a number
+
+            // Check if the element has a font size property defined in its CSS
+            if (style.fontSize !== 'undefined' && style.fontSize !== '') {
+                // Calculate the new font size by increasing the current size by a percentage
+                var newSize = currentSize * (1 + 16 / 100);
+
+                // Assign the new font size to the element
+                element.style.fontSize = newSize + 'px';
+            }
+        });
+
+    } else if (symbol.src.includes('reduce.svg')) {
         symbol.src = '../images/index/increase.svg';
-        var nuevoZoom = document.body.style.zoom || 1;
-        nuevoZoom = parseFloat(nuevoZoom) - 0.3;
-        if (nuevoZoom >= 0.5) {
-            document.body.style.zoom = nuevoZoom;
-        }
+        // Select specific elements in the document
+        var elements = document.querySelectorAll('p, div, ul, ol, li, h1, h2, h3, h4, input, label');
+
+        // For each selected element
+        elements.forEach(function(element) {
+            // Get the current font size
+            var style = window.getComputedStyle(element);
+            var currentSize = parseFloat(style.fontSize); // Get the current size as a number
+
+            // Check if the element has a font size property defined in its CSS
+            if (style.fontSize !== 'undefined' && style.fontSize !== '') {
+                // Calculate the new font size by decreasing the current size by a percentage
+                var newSize = currentSize / ( 1+ 18 / 100);
+
+                // Assign the new font size to the element
+                element.style.fontSize = newSize + 'px';
+            }
+        });
     }
-}
+} 
 
 
 /***************************FUNCTION TO SET INITIAL SETTINGS***************************/
 
 function initialSetting(){
     /*Function that does the initial setting of the webpage keeping in mind if it exist or not a cookie*/
-    theme = getCookie(themeName);
-
-    if( theme === null || theme === "" || theme === undefined ){
-        theme = "1";
-    }
 
     if ( theme === "2" ){
         indexCss.href = '../css/indexDark.css';
         themeIcon.src = '../images/index/lightmode.svg';
         for (var i = 0; i < logos.length; i++) {
             var logo = logos[i];
-            logo.src = '../images/index/logosimplewhite.svg';
+            logo.src = '../images/index/logosimplewhite.png';
         }
     }else if ( theme === "1" ){
         indexCss.href = '../css/indexLight.css';
         themeIcon.src = '../images/index/darkmode.svg';
         for (var i = 0; i < logos.length; i++) {
             var logo = logos[i];
-            logo.src = '../images/index/logosimple.svg';
+            logo.src = '../images/index/logosimple.png';
         }
-    }
-
-    language = getCookie(languageName);
-    if( language === null || language === "" || language === undefined ){
-        language = "en";
     }
 
     insertLanguageWebHtmlElements( pairingHtmlContent );
@@ -1485,18 +1476,18 @@ function changeTheme(){
         themeIcon.src = '../images/index/lightmode.svg';
         for (var i = 0; i < logos.length; i++) {
             var logo = logos[i];
-            logo.src = '../images/index/logosimplewhite.svg';
+            logo.src = '../images/index/logosimplewhite.png';
         }
-        setCookie(themeName, "2", 4);
+        theme = "2";
     }
     else if(indexCss.href.includes('indexDark.css')){
         indexCss.href = '../css/indexLight.css';
         themeIcon.src = '../images/index/darkmode.svg';
         for (var i = 0; i < logos.length; i++) {
             var logo = logos[i];
-            logo.src = '../images/index/logosimple.svg';
+            logo.src = '../images/index/logosimple.png';
         }
-        setCookie(themeName, "1", 4);
+        theme = "1";
     }
 }
 
