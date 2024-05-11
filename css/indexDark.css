@@ -48,7 +48,7 @@ body{
     min-width: 100vw;
     max-width: 100vw;
     position: relative;
-    background-image: url("../images/index/textureWhite.svg");
+    background-image: url("../images/index/textureWhite.png");
     background-size: 33rem;
 }
 
@@ -308,6 +308,7 @@ header{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+
 }
 
 /*Contact information*/

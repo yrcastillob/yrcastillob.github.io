@@ -45,8 +45,8 @@ strong{
 
 body{
     font-size: 1.6rem;
-    background-image: url("../images/index/texture.svg");
-    background-size: 28rem;
+    background-image: url("../images/index/texture.png");
+    background-size: 33rem;
 }
 
 /********************NAVBAR*********************/
